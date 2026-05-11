@@ -192,3 +192,47 @@ Jorge Enrique Flores Montano (ORCID iD: [0009-0003-1859-8418](https://orcid.org/
 
 The author is the inventor of MILO (patent pending) and the founder of JM Automated Solutions. The architectural research direction proposed in this paper is a contribution from a working development program in which the author retains sole authorship and inventive interest. No external funding was received for the preparation of this manuscript. The author retains all rights to MILO and to the architectural framing articulated herein.
 
+## Appendix A — About MILO
+
+MILO (Modular Intelligent Learning Orchestrator) is a patent-pending adaptive AI orchestration architecture organized into discrete, single-responsibility subsystems under a strict separation-of-concerns discipline. An audit-first command-and-signal substrate persists every command before dispatch and every signal before fanout, producing an append-only audit trail that survives arbitrary process termination. The architecture is designed for *viability* — operational continuity under non-stationary conditions — rather than for prediction accuracy against an expected future.
+
+### Eight structural principles
+
+Six are established physical, informational, control-theoretic, and statistical laws applied as architectural design constraints; two are original frameworks proposed by the author for the operator-cognitive performance layer of high-consequence systems.
+
+1. **Second Law of Thermodynamics** — entropy treated as an architectural diagnostic signal, not a fault to be suppressed.
+2. **Ashby's Law of Requisite Variety** — a regulator must possess variety at least equal to the system it regulates; implemented as a fleet of specialist agents matching the operational domain.
+3. **Shannon Information Theory** — variance reduction occurs at the signal-carrier level, not redundantly at each consumer.
+4. **Principle of Least Action — Single-Target Dispatch** — every command has one explicit target; no implicit resolvers, no opaque dispatchers.
+5. **Lyapunov-Style Bounded Response** — every adaptive subsystem admits an explicit halt-and-resume pathway; adaptation that drifts unboundedly is failure, not learning.
+6. **Power-Law Distribution Architecture** — engineered for the 99th-percentile event, not the median.
+7. **Individual-Baseline Variance Modeling** *(original framework)* — operator-layer interventions calibrated against the individual's own established performance baseline, never a population norm. Design-stage; pending empirical validation.
+8. **Precision Perturbation Without Variance Compression** *(original framework)* — operator-layer interventions shift probability mass toward high-reliability decision outputs while preserving operator authority and the variability that *is* the operator's adaptive intelligence. Design-stage; pending empirical validation.
+
+### Eight operational integrity constraints
+
+Architectural commitments designed to be implemented as enforceable safeguards in deployment builds — not as runtime policy. Disabling any constraint should require rebuilding from source, not toggling a flag.
+
+1. **No coercion, ever** — the system issues recommendations, never compels.
+2. **Individual baseline only** — measurements against the operator's own baseline; never against a population norm or productivity target.
+3. **No surveillance architecture** — performance-support tool, not a monitoring infrastructure.
+4. **Operator authority is the invariant** — the system expands effective decision options; it never narrows or preempts them.
+5. **Operational transparency** — every recommendation includes a plain-language explanation.
+6. **Data sovereignty** — operator-layer data belongs to the institutional program under documented data governance.
+7. **Override always available** — overrides are logged for audit but never used for adverse personnel action.
+8. **Independent oversight** — operator-layer deployments require institutional ethics-board review, published consent frameworks, and periodic third-party audits.
+
+### Unifying principle
+
+> *MILO does not predict the future. It remains viable in any future.*
+
+The principle is falsifiable: a system whose audit trail is incomplete, whose recovery is improvised, whose adaptation drifts unboundedly, or whose operator override is policy-level rather than architectural, fails the principle.
+
+### Trademark, patent, and submission status
+
+- **Mark.** *~MILO™* — U.S. Patent and Trademark Office Serial No. 99706004; filed March 16, 2026; intent-to-use; International Class 009 (downloadable AI software). The leading tilde disambiguates from senior MILO marks held by unrelated owners in different International Classes.
+- **Patent.** Patent application pending for the underlying software architecture. Implementation may require a patent license once issued; nothing in this document or its CC BY 4.0 license on the manuscript text grants any patent license.
+- **Federal submission.** Submitted to the U.S. Department of Energy under the *Genesis Mission* (Executive Order 14363, November 2025); currently under review. No acceptance or grant outcome is claimed.
+- **Concept DOI.** [10.5281/zenodo.20117025](https://doi.org/10.5281/zenodo.20117025) — Zenodo, persistent across versions.
+- **Public reference.** [https://github.com/jmontano1/milo-architecture](https://github.com/jmontano1/milo-architecture).
+- **Author contact.** Jorge Enrique Flores Montano · jmontano@jmautomated.com · ORCID iD: [0009-0003-1859-8418](https://orcid.org/0009-0003-1859-8418).
