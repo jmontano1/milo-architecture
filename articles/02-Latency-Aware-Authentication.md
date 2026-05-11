@@ -119,6 +119,8 @@ The table is not exhaustive; it illustrates the principle that the operational l
 
 The discipline of latency-aware authentication is operationalized through five architectural commitments.
 
+[FIGURE_1]
+
 **C1 — Consequence classification before authentication design.** Every action class in the industrial control system is assigned an operational-consequence tier prior to authentication design. The tier captures the maximum downstream consequence of a single instance of the action, not the typical case. A motion-control loop's typical command has low consequence (incremental position adjustment); the same loop's threshold-crossing command (force-limit exceedance, envelope departure) has high consequence. The classification is the substrate; the authentication design follows.
 
 **C2 — Pre-execution gating with three outputs.** Every action passes through a pre-execution gate with three permitted outputs: *allow* (logged), *hold/block* (with plain-language operational explanation), or *recommend* (safer alternative) [7]. The gate's latency budget is set by the operational consequence tier: low-consequence actions pass through a sub-millisecond log-only gate; high-consequence actions pass through a deliberate authorization gate calibrated to human decision-making latency. The architectural pattern is the same across tiers; the latency budget and the authorization requirement vary.
