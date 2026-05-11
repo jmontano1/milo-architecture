@@ -1,16 +1,21 @@
 # ~MILO™ — Modular Intelligent Learning Orchestrator
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20117025.svg)](https://doi.org/10.5281/zenodo.20117025)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
+
 > *MILO does not predict the future. It remains viable in any future.*
 
 **Adaptive AI orchestration for high-consequence critical-infrastructure environments.**
 
 | | |
 |---|---|
+| **DOI** | [`10.5281/zenodo.20117025`](https://doi.org/10.5281/zenodo.20117025) (concept DOI; persistent across versions) |
 | **Trademark** | ~MILO™ — USPTO Serial No. **99706004** (filed March 16, 2026; intent-to-use, Class 009) |
 | **Patent** | **Patent Pending** |
-| **Federal submission** | Submitted under the U.S. Department of Energy **Genesis Mission** (Executive Order 14363, November 2025) |
-| **Inventor** | Jorge Enrique Flores Montano · Founder, JM Automated Solutions |
+| **Federal submission** | Submitted to the U.S. Department of Energy **Genesis Mission** (Executive Order 14363, November 2025) — currently under review |
+| **Inventor** | Jorge Enrique Flores Montano · Founder, JM Automated Solutions · [ORCID 0009-0003-1859-8418](https://orcid.org/0009-0003-1859-8418) |
 | **License (docs)** | [CC BY 4.0](LICENSE) · *All source-code rights reserved; patent pending* |
+| **Contact** | jmontano@jmautomated.com |
 
 ---
 
@@ -121,7 +126,22 @@ The architectural manuscripts in this repository are released under the **Creati
 
 **All source-code rights for the underlying MILO implementation are reserved. Patent pending.**
 
-To cite this work formally, see [`CITATION.cff`](CITATION.cff).
+### How to cite
+
+```bibtex
+@misc{flores_montano_milo_2026,
+  author       = {Flores Montano, Jorge Enrique},
+  title        = {{MILO} --- {M}odular {I}ntelligent {L}earning {O}rchestrator:
+                  A Public Architectural Reference},
+  year         = {2026},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.20117025},
+  url          = {https://doi.org/10.5281/zenodo.20117025},
+  note         = {Patent pending; USPTO Serial No.~99706004. CC BY 4.0.}
+}
+```
+
+Or use the structured `CITATION.cff` for automatic citation export — GitHub renders a "Cite this repository" widget at the top-right of the repo page.
 
 ---
 
