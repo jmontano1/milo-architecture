@@ -24,6 +24,37 @@ MILO is grounded in established standards (NIST SP 800-82r3 for operational-tech
 
 ---
 
+## Architecture at a glance
+
+```mermaid
+flowchart LR
+    OP[Human Operator]
+    GATE[Pre-Execution Gate<br/>allow · hold · recommend]
+    BUS[Audit-First Command Bus<br/><i>persist-before-deliver</i>]
+    SUB[Discrete Single-Responsibility<br/>Subsystems]
+    SIG[Audit-First Signal Substrate<br/>reflex predicates before fanout]
+    REFLEX[Emergency-Halt Reflex]
+    AUDIT[(Append-Only Audit Log<br/>+ cryptographic chain-of-custody<br/>+ custodial separation<br/>+ external WORM replication)]
+
+    OP -->|"consequential<br/>action"| GATE
+    GATE -->|allow| BUS
+    GATE -.->|hold / recommend| OP
+    BUS -->|"explicit-target<br/>dispatch"| SUB
+    SUB -->|signals| SIG
+    SIG -->|"critical"| REFLEX
+    SIG -.->|"non-critical<br/>fanout"| SUB
+    REFLEX -->|halt cmd| BUS
+
+    BUS -.persists.-> AUDIT
+    SIG -.persists.-> AUDIT
+    REFLEX -.persists.-> AUDIT
+    GATE -.persists.-> AUDIT
+```
+
+Every visible state in the architecture is backed by a persisted event. Audit precedes delivery; explicit-target dispatch precludes implicit routing; reflex predicates short-circuit critical signals before subscribers see them; operator override is always available and always logged. A minimal runnable reference implementing four of these mechanisms in ~150 lines of standard-library Python is provided in [`examples/persist_before_deliver.py`](examples/persist_before_deliver.py).
+
+---
+
 ## Architectural papers
 
 Five standalone papers articulate MILO's architecture, each grounded in established external sources and verifiable against public standards. All five are linked below and available as professionally typeset PDFs in [`pdfs/`](pdfs/).
@@ -91,6 +122,12 @@ The architectural manuscripts in this repository are released under the **Creati
 **All source-code rights for the underlying MILO implementation are reserved. Patent pending.**
 
 To cite this work formally, see [`CITATION.cff`](CITATION.cff).
+
+---
+
+## A note on the mark form
+
+The mark filed at USPTO is `~MILO` with a leading tilde. The tilde is part of the registered mark form, included to distinguish the application from senior MILO marks held by unrelated owners in different International Classes (e.g., Nestlé's MILO in Class 30 for chocolate beverages, dating to the 1930s). The author's application is in **International Class 009** (downloadable AI software). The acronym "MILO" remains the spoken/written name of the system and is used in body text throughout the manuscripts; `~MILO™` is the brand-mark form used in trademark notices and on the title page of each paper.
 
 ---
 
