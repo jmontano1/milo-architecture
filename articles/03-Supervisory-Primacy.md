@@ -69,6 +69,15 @@ Human-in-the-loop (HITL) frameworks for AI systems are increasingly treated as p
 
 **Keywords:** human-in-the-loop, AI oversight, supervisory control, EU AI Act, levels of automation, adaptive AI architecture, high-consequence systems.
 
+**Highlights.**
+
+- Introduces *Supervisory Primacy* as the architectural design principle by which human authority over consequential AI decisions becomes a constitutional property of the orchestration system, not a runtime configuration.
+- Operationalizes the principle through four architectural mechanisms: audit-first command-and-signal substrate, reflex predicates before fanout, pre-execution gating, and voluntary side-effect pathways.
+- Composes with EU AI Act Article 14, NIST AI RMF 1.0 Appendix C, the Parasuraman–Sheridan–Wickens framework, and the industrial-robotics functional-safety standards (ANSI/RIA R15.06, ISO 10218, ISO/TS 15066, IEC 61508/61511).
+- Specifies a threat model for the audit substrate requiring cryptographic chain-of-custody, custodial separation, and external WORM replication for high-consequence deployment posture.
+
+**Index Terms:** human-in-the-loop AI, supervisory control, AI oversight, EU AI Act, levels of automation, audit-first architecture, industrial robotics safety, functional safety, IEC 61508, ANSI/RIA R15.06, NIST AI RMF.
+
 **Plain Language Summary.** When an AI system operates in a setting where mistakes have severe consequences — a power grid control room, a nuclear facility, an operating room, an autonomous robotic line — the rule that "a human can always override the AI" must be more than a promise. It must be built into the architecture, so that disabling the override would require rebuilding the system from source, not toggling a setting. This paper names that architectural property *Supervisory Primacy*: the human-authoritative state is the default for any consequential action; the AI proposes and the human disposes; every consequential action carries a mandatory audit trail by architecture, not by policy. The principle does not invent human oversight; it specifies the structural form that makes existing human-oversight regulations operationally effective.
 
 **Relevance to U.S. National Interest.** Human oversight of AI in critical-infrastructure environments — energy grid operations, nuclear facility control, autonomous robotics under human-robot interface, satellite and space operations, first-responder coordination — is a foundational concern for U.S. critical-infrastructure protection. The principle articulated here provides the architectural substrate by which sector-specific oversight requirements (FDA, NHTSA, EASA, NRC, DOE) become operationally enforceable rather than promissory.
@@ -164,6 +173,10 @@ The principle is articulated at the architectural-design level. Three specific l
 This paper has introduced Supervisory Primacy as the architectural design principle by which human authority over consequential AI decisions becomes a constitutional property of an adaptive AI orchestration system rather than a runtime configuration. The principle is consistent with EU AI Act Article 14 [1], operates within the Parasuraman-Sheridan-Wickens levels-of-automation framework [2], aligns with NIST AI RMF 1.0 Appendix C on human-AI interaction [9], and is illustrated using MILO [3], the author's working orchestrator submitted under the U.S. Department of Energy's Genesis Mission [4]. The contribution is at the architectural level: Supervisory Primacy is not a new HITL taxonomy; it is the structural design — audit-first command flow, reflexes before fanout, pre-execution gating, voluntary side-effect pathway, and integrity constraints as architectural-target safeguards in signed builds — that makes human oversight load-bearing rather than retrofittable. The principle's failure modes are mechanical (an audit trail with a gap, a runtime flag that disables an integrity constraint, an auto-chain pathway, an opaque resolver in the command bus); its successes are mechanical (an unbroken audit trail, a structurally inviolate integrity constraint, an explicit voluntary side-effect pathway, a transparent command bus with single-target dispatch). Related architectural directions by the author — independence-verifiable multi-source cryptographic entropy, latency-aware authentication in industrial control, structural principles for adaptive AI architecture, and the discipline of viability under non-stationary conditions — each inherit Supervisory Primacy as a constitutional property.
 
 ---
+
+## Data Availability
+
+All architectural materials, source manuscripts, the reference implementation, and accompanying figures are openly available at https://github.com/jmontano1/milo-architecture and permanently archived at Zenodo (DOI: [10.5281/zenodo.20117025](https://doi.org/10.5281/zenodo.20117025)). No private datasets are referenced; the architectural framework itself is the subject of this paper. Patent rights for the underlying MILO software architecture are reserved; the ~MILO trademark is held under USPTO Serial No. 99706004 (intent-to-use, Class 009).
 
 ## References
 

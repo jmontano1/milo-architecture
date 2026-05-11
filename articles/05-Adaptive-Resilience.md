@@ -70,6 +70,15 @@ Predictive optimization has reached structural limits as the design criterion fo
 
 **Keywords:** adaptive AI, viability, resilience engineering, antifragility, distribution shift, AI orchestration, high-consequence systems, human-in-the-loop.
 
+**Highlights.**
+
+- Articulates *viability* as a concrete adaptive-AI orchestration discipline, distinct from prediction accuracy as a design criterion for high-consequence environments.
+- Synthesizes three established lineages — Beer's Viable System Model, Hollnagel's resilience engineering, and Taleb's antifragility — into a coherent design discipline operationalized through six mechanisms (M1–M6).
+- Frames viability as a falsifiable design target: a system whose audit trail is incomplete, whose recovery is improvised, whose adaptation drifts unboundedly, or whose operator override is policy-level fails the principle.
+- Bounds antifragility-applied-to-the-system from antifragility-applied-to-operators through eight non-negotiable operational integrity constraints.
+
+**Index Terms:** adaptive AI, viability, resilience engineering, antifragility, distribution shift, AI orchestration, high-consequence systems, Beer Viable System Model, Hollnagel four cornerstones, Taleb antifragile, non-stationarity, critical infrastructure.
+
 **Plain Language Summary.** Most AI systems today are designed to make accurate predictions about the future based on past data — and they fail, often catastrophically, when the future stops resembling the past. In critical-infrastructure environments (power grids, manufacturing lines, nuclear facilities, autonomous robotics, satellite operations), an AI system whose usefulness depends on accurate prediction is a brittle system. This paper argues that the next generation of AI orchestration for high-consequence environments must be designed for *viability* — the capacity to remain operational, auditable, and human-controllable under conditions the system was not trained to expect — rather than for prediction accuracy. The principle synthesizes Beer's cybernetic viability, Hollnagel's resilience engineering, and Taleb's antifragility into a concrete engineering discipline.
 
 **Relevance to U.S. National Interest.** AI systems deployed in U.S. critical-infrastructure environments — the deployment context identified by the DOE Genesis Mission — face operational futures that include adversarial action, climate-driven environmental shifts, supply-chain disruption, and unforeseen sociotechnical failures. AI orchestrators whose viability is contingent on prediction accuracy are structurally unsuited for those environments. The discipline articulated here is intended to make U.S. critical-infrastructure AI viable across the futures it will actually encounter.
@@ -172,6 +181,10 @@ This paper proposes a viability discipline; it does not present an empirical eva
 This paper has argued that adaptive AI systems in high-consequence environments must be designed for viability rather than for prediction accuracy. The argument is built on Beer's Viable System Model [1], Hollnagel's resilience engineering [2], and Taleb's antifragility [3], with adaptations to the specifics of AI orchestration: audit-first command flow, modular subsystem construction with strict separation of concerns, bounded recovery, tail-event preparation, reviewed-outcome learning, and preserved operator authority. The discipline is operationalized in MILO [4], submitted under the U.S. Department of Energy's Genesis Mission [5]. The unifying principle — *MILO does not predict the future; it remains viable in any future* — is a design target, not a prediction claim. Related architectural directions by the author — multi-source cryptographic entropy sourcing, latency-aware authentication in industrial control, supervisory primacy for human-in-the-loop AI orchestration, and the structural principles of adaptive AI architecture — each inherit the viability discipline as their substrate.
 
 ---
+
+## Data Availability
+
+All architectural materials, source manuscripts, the reference implementation, and accompanying figures are openly available at https://github.com/jmontano1/milo-architecture and permanently archived at Zenodo (DOI: [10.5281/zenodo.20117025](https://doi.org/10.5281/zenodo.20117025)). No private datasets are referenced; the architectural framework itself is the subject of this paper. Patent rights for the underlying MILO software architecture are reserved; the ~MILO trademark is held under USPTO Serial No. 99706004 (intent-to-use, Class 009).
 
 ## References
 

@@ -66,6 +66,15 @@ True random number generators that seed cryptographic systems are evaluated on t
 
 **Keywords:** cryptographic entropy, true random number generation, NIST SP 800-90B, multi-source entropy, independence verification, architectural design.
 
+**Highlights.**
+
+- Proposes *independence-verifiable joint extraction* as a measurable architectural property of multi-source cryptographic entropy generators, distinct from substrate-engineered approaches.
+- Positions the research direction within the NIST SP 800-90B framework as a design-time constraint rather than a post-deployment validation step.
+- Distinguishes the proposed architectural class from single-source thermal TRNGs, single-camera optical-chaos sources, and parallel-optical TRNG architectures via two falsification criteria.
+- Connects the architectural class at the public-architecture level to MILO's sensor-receptor subsystem; specific apparatus is not proposed.
+
+**Index Terms:** cryptographic entropy, true random number generation, NIST SP 800-90B, multi-source entropy, independence verification, joint-observation extraction, signal processing, critical-infrastructure cryptography.
+
 **Plain Language Summary.** Cryptographic systems that protect critical infrastructure — power grids, secure communications, financial transactions, defense command-and-control — depend on a continuous supply of high-quality random numbers seeded by physical noise sources. When multiple noise sources are combined, the resulting random numbers are only as strong as the *independence* between sources. Today, independence is achieved by building sources that are independent at the substrate level (for example, separate laser chaos channels). This paper argues that the next architectural step is to design entropy systems where independence is not assumed but *measured* at the joint-observation level — built in, verifiable, and auditable. The argument is a research-direction position paper, not a claim about a specific apparatus.
 
 **Relevance to U.S. National Interest.** Cryptographic entropy sourcing underpins the trustworthiness of every protected communication and authentication system in U.S. critical infrastructure. The U.S. Department of Energy's Genesis Mission identifies AI-enabled advancements in critical-infrastructure security as a national-importance priority; the architectural direction proposed here addresses a foundational layer of that priority.
@@ -145,6 +154,10 @@ This paper does not present an apparatus, an empirical evaluation, or a worked i
 This paper has proposed an architectural research direction for multi-source cryptographic entropy generation: that independence should be a *designed-for, measurable, and architecturally enforced property* of the joint observation, rather than an assumed property of the substrate. The position is positioned within the NIST SP 800-90B framework for multi-source entropy generators [1] and is distinguished from the current pattern of substrate-engineered parallel chaos sources [5], [6], single-source thermal TRNGs [2], [3], single-camera optical-chaos sources [4], and wearable sensor entropy extraction [7]. The position is presented at the architectural-principle level only; specific apparatus, sensor configurations, geometries, sampling protocols, and extraction algorithms are not proposed in this paper. The architectural connection to MILO's sensor-receptor subsystem [8], submitted under the U.S. Department of Energy's Genesis Mission [9], illustrates compatibility at the public-architecture level. Related architectural directions — latency-aware authentication in industrial control, supervisory primacy for human-in-the-loop AI orchestration, structural principles for adaptive AI architecture, and the discipline of viability under non-stationary conditions — are developed in related work by the author.
 
 ---
+
+## Data Availability
+
+All architectural materials, source manuscripts, the reference implementation, and accompanying figures are openly available at https://github.com/jmontano1/milo-architecture and permanently archived at Zenodo (DOI: [10.5281/zenodo.20117025](https://doi.org/10.5281/zenodo.20117025)). No private datasets are referenced; the architectural framework itself is the subject of this paper. Patent rights for the underlying MILO software architecture are reserved; the ~MILO trademark is held under USPTO Serial No. 99706004 (intent-to-use, Class 009).
 
 ## References
 

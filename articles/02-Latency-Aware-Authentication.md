@@ -70,6 +70,15 @@ Authentication patterns developed for web and cloud environments — OAuth round
 
 **Keywords:** industrial control, operational technology, latency-aware authentication, ISA/IEC 62443, NIST SP 800-82, adaptive authentication, pre-execution gating.
 
+**Highlights.**
+
+- Proposes *latency-aware authentication* as an adaptive design discipline for industrial control: authentication strength graded against operational consequence per control cycle rather than uniformly.
+- Composes orthogonally with the attacker-class Security Level tiers (SL1–SL4) of ISA/IEC 62443, introducing a consequence-class axis aligned with NIST SP 800-82r3's operational technology framing.
+- Specifies five architectural commitments — including pre-execution gating with three outputs (allow / hold-block / recommend) and persist-before-deliver audit across all consequence tiers.
+- Grounded in seven years of industrial-vision deployment experience across food, beverage, pharmaceutical, and medical-device manufacturing.
+
+**Index Terms:** industrial control, operational technology security, latency-aware authentication, ISA/IEC 62443, NIST SP 800-82, NIST SP 800-207, adaptive authentication, pre-execution gating, Zero Trust architecture, critical manufacturing.
+
 **Plain Language Summary.** Authentication methods designed for the web — typing a password, getting a text-message code, completing an OAuth handshake — assume the user has hundreds of milliseconds to a few seconds to respond. Industrial control systems running manufacturing lines, power grids, and chemical plants do not have that budget; their decisions happen in milliseconds. As a result, authentication is often pushed to the perimeter and then absent inside the control loop, or grafted on with timing penalties that operators are pressured to bypass. This paper proposes grading the strength of authentication against the operational consequence of each individual control command, so that high-consequence actions get deliberate human authorization while routine actions pass through a lightweight log. The approach composes with existing industrial cybersecurity standards rather than replacing them.
 
 **Relevance to U.S. National Interest.** Critical-manufacturing cybersecurity is a designated U.S. national-interest sector under CISA's Critical Manufacturing Sector framework. Industrial control authentication is identified by NIST SP 800-82r3 as a gap requiring sector-specific guidance. The discipline proposed here addresses that gap directly and is aligned with the DOE Genesis Mission's advanced-manufacturing and grid-reliability priorities.
@@ -166,6 +175,10 @@ The framework is presented at the architectural-discipline level; no instrumente
 This paper has proposed *latency-aware authentication* as an architectural discipline for industrial control environments — authentication strength graded against operational consequence per control cycle, composed orthogonally with the ISA/IEC 62443 attacker-class Security Level framework [1], grounded in the latency budgets of real industrial domains, and operationalized through the pre-execution gating module of MILO [3], [7]. The discipline addresses a recurring industrial-control gap: web-derived authentication patterns can be operationally incompatible with control-loop latency budgets, and the standard responses (perimeter-only authentication, full per-command authentication with bypass-prone overhead) either under-protect or over-burden the system. The discipline is grounded in the author's industrial vision deployment experience and is consistent with NIST SP 800-82r3 [2], NIST AI 100-1 Appendix C [11], and Zero Trust architecture principles [6]. Related architectural directions — supervisory primacy for human-in-the-loop AI orchestration, structural principles for adaptive AI architecture, the discipline of viability under non-stationary conditions, and multi-source cryptographic entropy sourcing — are developed in related work by the author and share the same audit-first command bus substrate and operational integrity constraints.
 
 ---
+
+## Data Availability
+
+All architectural materials, source manuscripts, the reference implementation, and accompanying figures are openly available at https://github.com/jmontano1/milo-architecture and permanently archived at Zenodo (DOI: [10.5281/zenodo.20117025](https://doi.org/10.5281/zenodo.20117025)). No private datasets are referenced; the architectural framework itself is the subject of this paper. Patent rights for the underlying MILO software architecture are reserved; the ~MILO trademark is held under USPTO Serial No. 99706004 (intent-to-use, Class 009).
 
 ## References
 

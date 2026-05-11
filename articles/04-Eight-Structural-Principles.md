@@ -73,6 +73,15 @@ Adaptive artificial-intelligence systems are described in vague terms — *self-
 
 **Keywords:** adaptive AI, architectural constraints, cybernetics, Lyapunov-style bounded response, antifragility, human-in-the-loop, industrial AI orchestration.
 
+**Highlights.**
+
+- Identifies eight structural principles that bound the design space of viable adaptive AI architectures, drawn from established physical, informational, control-theoretic, and statistical lineages.
+- Six principles apply established external laws (Second Law of Thermodynamics, Ashby's Law of Requisite Variety, Shannon Information Theory, Principle of Least Action, Lyapunov-style bounded response, Power-Law distribution).
+- Two original frameworks proposed by the author for the operator-cognitive performance layer: *Individual-Baseline Variance Modeling* and *Precision Perturbation Without Variance Compression* — flagged as design-stage, pending empirical validation.
+- Synthesis is positioned as complementary to Friston's Free Energy Principle and Beer's Viable System Model but distinct — design-time constraints on architectural choices, not a unified theory of intelligence.
+
+**Index Terms:** adaptive AI architecture, structural principles, cybernetics, control theory, Lyapunov stability, Ashby's Law of Requisite Variety, Shannon Information Theory, antifragility, Power-Law distribution, operator-cognitive modeling, viable system model.
+
 **Plain Language Summary.** Adaptive AI systems are often described in vague terms — *self-improving*, *resilient*, *agentic* — that obscure what makes some such systems viable and others fragile. This paper identifies eight engineering principles that constrain the design space of viable adaptive AI architectures. Six are established physical and informational laws (thermodynamic entropy, Ashby's variety law, Shannon information theory, the principle of least action, Lyapunov-style bounded response, and the power-law distribution of system events) applied here as architectural design constraints rather than as theories of intelligence. Two are original frameworks proposed by the author for the operator-cognitive performance layer of high-consequence systems: *Individual-Baseline Variance Modeling* and *Precision Perturbation Without Variance Compression*. The eight principles, taken together, separate adaptive AI orchestrators that survive operational stress from those that fail it.
 
 **Relevance to U.S. National Interest.** The principles articulated here apply directly to the AI-enabled critical-infrastructure environments identified by the DOE Genesis Mission — advanced manufacturing, grid reliability, autonomous systems, nuclear-facility operations, and human-in-the-loop AI for high-consequence decision support. Adaptive AI deployed in those environments without these architectural constraints carries failure modes that the constraints were established to prevent.
@@ -182,6 +191,10 @@ This is a perspective paper synthesizing eight principles. Five specific limitat
 This paper has identified eight structural principles for adaptive AI architecture. Six are established physical and informational laws applied as architectural design constraints; two are original frameworks proposed by the author for the operator-cognitive performance layer. The principles operate as design-time constraints on architectural choices, not as a unified theory of intelligence. They constrain the design space of viable adaptive AI orchestration more tightly than current field discourse acknowledges. The contribution is at the level of engineering design — what an adaptive AI orchestration system must do architecturally to satisfy the constraints — and is illustrated using MILO, the author's working implementation [1], submitted under the U.S. Department of Energy's Genesis Mission [2]. The principles are intended to be falsifiable, applicable, and consistent with the broader literature on adaptive systems, cybernetics, and the thermodynamics of intelligence.
 
 ---
+
+## Data Availability
+
+All architectural materials, source manuscripts, the reference implementation, and accompanying figures are openly available at https://github.com/jmontano1/milo-architecture and permanently archived at Zenodo (DOI: [10.5281/zenodo.20117025](https://doi.org/10.5281/zenodo.20117025)). No private datasets are referenced; the architectural framework itself is the subject of this paper. Patent rights for the underlying MILO software architecture are reserved; the ~MILO trademark is held under USPTO Serial No. 99706004 (intent-to-use, Class 009).
 
 ## References
 
