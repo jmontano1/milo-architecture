@@ -67,13 +67,15 @@ Five standalone papers articulate MILO's architecture, each grounded in establis
 - **Standard PDF** (`pdfs/`) — rendered from markdown via ReportLab. Primary citation-anchor version with inline architectural figures, hyperlinked references, and PDF bookmarks.
 - **Scholarly LaTeX PDF** (`pdfs-singlecol/`) — single-column scholarly typesetting via pandoc + tectonic with the LaTeX `article` class. The full LaTeX source bundle (with figures) is in [`latex-sources/`](latex-sources/) so any peer-reviewed journal editor can re-typeset the manuscript directly into their template.
 
-| # | Title | Standard | LaTeX | Domain |
-|---|---|:---:|:---:|---|
-| 1 | [Independence as an Architectural Property: A Research Direction for Multi-Source Cryptographic Entropy](articles/01-Independence-as-Architectural-Property.md) | [📄](pdfs/MILO_Article_01_ThermalEntropy.pdf) | [📑](pdfs-singlecol/MILO_Article_01_ThermalEntropy_singlecol.pdf) | Cryptographic entropy · TRNG · NIST SP 800-90B |
-| 2 | [Latency-Aware Authentication in Industrial Control Environments](articles/02-Latency-Aware-Authentication.md) | [📄](pdfs/MILO_Article_02_LatencyAuth.pdf) | [📑](pdfs-singlecol/MILO_Article_02_LatencyAuth_singlecol.pdf) | OT cybersecurity · ISA/IEC 62443 · NIST SP 800-82r3 |
-| 3 | [Supervisory Primacy: Human-in-the-Loop AI Orchestration for High-Consequence Domains](articles/03-Supervisory-Primacy.md) | [📄](pdfs/MILO_Article_03_SupervisoryPrimacy.pdf) | [📑](pdfs-singlecol/MILO_Article_03_SupervisoryPrimacy_singlecol.pdf) | AI governance · HITL · EU AI Act Article 14 |
-| 4 | [Eight Structural Principles for Adaptive AI Architecture](articles/04-Eight-Structural-Principles.md) | [📄](pdfs/MILO_Article_04_GoverningPrinciples.pdf) | [📑](pdfs-singlecol/MILO_Article_04_GoverningPrinciples_singlecol.pdf) | Adaptive AI theory · Cybernetics · Control theory |
-| 5 | [Adaptive Resilience: Why AI Systems Must Remain Viable in Any Future](articles/05-Adaptive-Resilience.md) | [📄](pdfs/MILO_Article_05_AdaptiveResilience.pdf) | [📑](pdfs-singlecol/MILO_Article_05_AdaptiveResilience_singlecol.pdf) | AI resilience · Viability · Non-stationary environments |
+| # | Title | DOI | Standard | LaTeX | Domain |
+|---|---|---|:---:|:---:|---|
+| 1 | [Independence as an Architectural Property: A Research Direction for Multi-Source Cryptographic Entropy](articles/01-Independence-as-Architectural-Property.md) | [10.5281/zenodo.20117647](https://doi.org/10.5281/zenodo.20117647) | [📄](pdfs/MILO_Article_01_ThermalEntropy.pdf) | [📑](pdfs-singlecol/MILO_Article_01_ThermalEntropy_singlecol.pdf) | Cryptographic entropy · TRNG · NIST SP 800-90B |
+| 2 | [Latency-Aware Authentication in Industrial Control Environments](articles/02-Latency-Aware-Authentication.md) | [10.5281/zenodo.20117651](https://doi.org/10.5281/zenodo.20117651) | [📄](pdfs/MILO_Article_02_LatencyAuth.pdf) | [📑](pdfs-singlecol/MILO_Article_02_LatencyAuth_singlecol.pdf) | OT cybersecurity · ISA/IEC 62443 · NIST SP 800-82r3 |
+| 3 | [Supervisory Primacy: Human-in-the-Loop AI Orchestration for High-Consequence Domains](articles/03-Supervisory-Primacy.md) | [10.5281/zenodo.20117662](https://doi.org/10.5281/zenodo.20117662) | [📄](pdfs/MILO_Article_03_SupervisoryPrimacy.pdf) | [📑](pdfs-singlecol/MILO_Article_03_SupervisoryPrimacy_singlecol.pdf) | AI governance · HITL · EU AI Act Article 14 |
+| 4 | [Eight Structural Principles for Adaptive AI Architecture](articles/04-Eight-Structural-Principles.md) | [10.5281/zenodo.20117703](https://doi.org/10.5281/zenodo.20117703) | [📄](pdfs/MILO_Article_04_GoverningPrinciples.pdf) | [📑](pdfs-singlecol/MILO_Article_04_GoverningPrinciples_singlecol.pdf) | Adaptive AI theory · Cybernetics · Control theory |
+| 5 | [Adaptive Resilience: Why AI Systems Must Remain Viable in Any Future](articles/05-Adaptive-Resilience.md) | [10.5281/zenodo.20117716](https://doi.org/10.5281/zenodo.20117716) | [📄](pdfs/MILO_Article_05_AdaptiveResilience.pdf) | [📑](pdfs-singlecol/MILO_Article_05_AdaptiveResilience_singlecol.pdf) | AI resilience · Viability · Non-stationary environments |
+
+**Concept DOI** (whole architectural reference, persistent across versions): [10.5281/zenodo.20117025](https://doi.org/10.5281/zenodo.20117025)
 
 See [`articles/README.md`](articles/README.md) for full abstracts of each paper.
 

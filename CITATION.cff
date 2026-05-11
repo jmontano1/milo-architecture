@@ -58,27 +58,37 @@ references:
       - family-names: "Flores Montano"
         given-names: "Jorge Enrique"
     year: 2026
+    doi: "10.5281/zenodo.20117647"
+    url: "https://doi.org/10.5281/zenodo.20117647"
   - type: article
     title: "Latency-Aware Authentication in Industrial Control Environments"
     authors:
       - family-names: "Flores Montano"
         given-names: "Jorge Enrique"
     year: 2026
+    doi: "10.5281/zenodo.20117651"
+    url: "https://doi.org/10.5281/zenodo.20117651"
   - type: article
     title: "Supervisory Primacy: Human-in-the-Loop AI Orchestration for High-Consequence Domains"
     authors:
       - family-names: "Flores Montano"
         given-names: "Jorge Enrique"
     year: 2026
+    doi: "10.5281/zenodo.20117662"
+    url: "https://doi.org/10.5281/zenodo.20117662"
   - type: article
     title: "Eight Structural Principles for Adaptive AI Architecture"
     authors:
       - family-names: "Flores Montano"
         given-names: "Jorge Enrique"
     year: 2026
+    doi: "10.5281/zenodo.20117703"
+    url: "https://doi.org/10.5281/zenodo.20117703"
   - type: article
     title: "Adaptive Resilience: Why AI Systems Must Remain Viable in Any Future"
     authors:
       - family-names: "Flores Montano"
         given-names: "Jorge Enrique"
     year: 2026
+    doi: "10.5281/zenodo.20117716"
+    url: "https://doi.org/10.5281/zenodo.20117716"
