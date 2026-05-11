@@ -1,0 +1,38 @@
+# ────────────────────────────────────────────────────────────
+#  MILO Architecture (public) — .gitignore
+#  Conservative defaults: nothing operational, no secrets,
+#  no editor scratch, no OS metadata.
+# ────────────────────────────────────────────────────────────
+
+# Secrets — never
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.mobileprovision
+
+# OS / editor scratch
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Build / temp
+*.log
+*.tmp
+.cache/
+__pycache__/
+node_modules/
+
+# Generated typesetting intermediates (we ship the final PDFs, not LaTeX scratch)
+*.aux
+*.toc
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.fls

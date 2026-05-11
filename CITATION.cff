@@ -1,0 +1,81 @@
+cff-version: 1.2.0
+title: "MILO — Modular Intelligent Learning Orchestrator: A Public Architectural Reference"
+message: "If you reference MILO or this architectural series, please cite as below."
+type: software
+authors:
+  - family-names: "Flores Montano"
+    given-names: "Jorge Enrique"
+    affiliation: "JM Automated Solutions"
+    alias: "Jorge Montano"
+identifiers:
+  - type: other
+    value: "USPTO Serial No. 99706004"
+    description: "U.S. trademark application for ~MILO, filed 2026-03-16, Class 009 (downloadable AI software)."
+repository-code: "https://github.com/jmontano1/milo-architecture"
+abstract: >
+  MILO (Modular Intelligent Learning Orchestrator) is a patent-pending adaptive
+  AI orchestration architecture for high-consequence critical-infrastructure
+  environments. The architecture is governed by eight structural principles
+  (Second Law of Thermodynamics, Ashby's Law of Requisite Variety, Shannon
+  Information Theory, the Principle of Least Action, Lyapunov-style bounded
+  response, Power-Law Distribution Architecture, and two original frameworks
+  proposed by the author: Individual-Baseline Variance Modeling and Precision
+  Perturbation Without Variance Compression) and by eight non-negotiable
+  operational integrity constraints (no coercion, individual baseline only,
+  no surveillance, operator authority invariant, operational transparency,
+  data sovereignty, override always available, independent oversight). The
+  system's unifying principle is "MILO does not predict the future. It remains
+  viable in any future." MILO has been submitted under the U.S. Department of
+  Energy Genesis Mission (Executive Order 14363, November 2025) as a candidate
+  architecture for AI-enabled critical-infrastructure systems.
+keywords:
+  - MILO
+  - Modular Intelligent Learning Orchestrator
+  - adaptive AI architecture
+  - AI orchestration
+  - human-in-the-loop AI
+  - critical infrastructure
+  - operational technology security
+  - resilience engineering
+  - antifragility
+  - cybernetics
+  - NIST SP 800-90B
+  - NIST SP 800-82r3
+  - ISA/IEC 62443
+  - EU AI Act Article 14
+  - NIST AI RMF
+  - DOE Genesis Mission
+  - patent pending
+license: CC-BY-4.0
+date-released: 2026-05-10
+references:
+  - type: article
+    title: "Independence as an Architectural Property: A Research Direction for Multi-Source Cryptographic Entropy"
+    authors:
+      - family-names: "Flores Montano"
+        given-names: "Jorge Enrique"
+    year: 2026
+  - type: article
+    title: "Latency-Aware Authentication in Industrial Control Environments"
+    authors:
+      - family-names: "Flores Montano"
+        given-names: "Jorge Enrique"
+    year: 2026
+  - type: article
+    title: "Supervisory Primacy: Human-in-the-Loop AI Orchestration for High-Consequence Domains"
+    authors:
+      - family-names: "Flores Montano"
+        given-names: "Jorge Enrique"
+    year: 2026
+  - type: article
+    title: "Eight Structural Principles for Adaptive AI Architecture"
+    authors:
+      - family-names: "Flores Montano"
+        given-names: "Jorge Enrique"
+    year: 2026
+  - type: article
+    title: "Adaptive Resilience: Why AI Systems Must Remain Viable in Any Future"
+    authors:
+      - family-names: "Flores Montano"
+        given-names: "Jorge Enrique"
+    year: 2026
