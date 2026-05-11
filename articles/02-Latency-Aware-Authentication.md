@@ -85,7 +85,7 @@ Authentication patterns developed for web and cloud environments — OAuth round
 
 **Status of claims.** The framework proposed here — *latency-aware authentication graded by operational consequence*, composed orthogonally with the attacker-class Security Level tiers of ISA/IEC 62443 [1] — is the author's original architectural discipline; the composition is described as a proposal, not as an existing certification. The latency budgets in §3 are illustrative ranges drawn from generic industry references; specific deployments vary by application. The compatibility argument with NIST SP 800-82r3 [2], NIST SP 800-207 [6], and NIST AI 100-1 [11] reflects the author's reading of those documents and is design intent, not a compliance attestation. The author's industrial-vision deployment context grounds the framework in operational reality but does not constitute external validation; empirical evaluation against an instrumented industrial-control deployment is forthcoming work. This manuscript is a preprint prior to peer review.
 
-**About MILO.** MILO (Modular Intelligent Learning Orchestrator) is a patent-pending adaptive AI orchestration architecture aimed at high-consequence critical-infrastructure environments. Its central design commitment is *viability* — operational continuity under non-stationary conditions — rather than *prediction accuracy* against an expected future. The architecture is governed by eight structural principles and eight operational integrity constraints, specified in detail in the companion architectural reference and not redeveloped here. The application submitted to the U.S. Department of Energy under the Genesis Mission [Executive Order 14363, November 2025] is currently under review; status updates will be disclosed if and when public information becomes available. The mark *~MILO*™ (USPTO Serial No. 99706004, intent-to-use, Class 009) and the underlying patent application are both pending. Public reference: https://github.com/jmontano1/milo-architecture. Author contact: jmontano@jmautomated.com.
+**About MILO.** MILO (Modular Intelligent Learning Orchestrator) is a patent-pending adaptive AI orchestration architecture for high-consequence critical-infrastructure environments. The full architectural reference — eight structural principles, eight operational integrity constraints, the unifying viability principle, and the trademark/patent status — is maintained as a single canonical document at https://github.com/jmontano1/milo-architecture (concept DOI: 10.5281/zenodo.20117025). Author contact: jmontano@jmautomated.com.
 
 ---
 
@@ -210,14 +210,12 @@ All architectural materials, source manuscripts, the reference implementation, a
 
 ---
 
-## Author Biography
+## About the author
 
-Jorge Enrique Flores Montano is the founder of JM Automated Solutions and the inventor of MILO (Modular Intelligent Learning Orchestrator), a patent-pending adaptive AI orchestration system. He holds a Master of Science in Industrial Engineering (December 2018), with a minor in Applied Statistics and a certification in Public Utilities Regulation Economics, and a Bachelor of Science in Mechatronics Engineering (May 2016), with a minor in Industrial Automation. He is a CONACYT-SENER federal scholar (selected 90 of 2,000 applicants) and a member of Alpha Pi Mu, the U.S. industrial-engineering honor society. He has over seven years of hands-on deployment experience in industrial vision and automation systems across the food, beverage, pharmaceutical, and medical-device manufacturing domains, including project management of a 1,200-parts-per-minute industrial inspection pilot that scaled into a full production deployment for a Fortune 500 beverage manufacturer. His work in adaptive AI architecture focuses on industrial control authentication, supervisory primacy for human-in-the-loop AI, and the structural principles of viable adaptive AI orchestration. MILO has been submitted under the U.S. Department of Energy's Genesis Mission as a candidate architecture for AI-enabled critical-infrastructure systems.
+Jorge Enrique Flores Montano (ORCID iD: [0009-0003-1859-8418](https://orcid.org/0009-0003-1859-8418); jmontano@jmautomated.com) is the founder of JM Automated Solutions and the inventor of MILO. A full biography is maintained at [https://www.milo-usa.com/jorge-enrique-flores-montano.html](https://www.milo-usa.com/jorge-enrique-flores-montano.html).
+
 
 ## Conflict of Interest and Funding Disclosure
 
 The author is the inventor of MILO (patent pending) and the founder of JM Automated Solutions. The discipline proposed in this paper is a contribution from a working development program in which the author retains sole authorship and inventive interest. No external funding was received for the preparation of this manuscript. The author retains all rights to MILO and to the discipline articulated herein.
 
----
-
-© 2026 Jorge Enrique Flores Montano · JM Automated Solutions · ~MILO™ is a trademark of Jorge Enrique Flores Montano · USPTO Serial No. 99706004 · Patent Pending.

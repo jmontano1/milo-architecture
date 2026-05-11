@@ -88,7 +88,7 @@ Adaptive artificial-intelligence systems are described in vague terms — *self-
 
 **Status of claims.** Six of the eight principles in this paper apply established physical and informational laws as architectural design constraints: the Second Law of Thermodynamics, Ashby's Law of Requisite Variety [6], Shannon Information Theory [7], the Principle of Least Action, Lyapunov stability [8], and the Power-Law distribution of complex-system events [9]. The mapping of each principle to a specific orchestrator-level architectural choice is the author's contribution and is subject to further validation; the laws themselves are external references. Principles 7 and 8 — *Individual-Baseline Variance Modeling* and *Precision Perturbation Without Variance Compression* — are original frameworks proposed by the author for the operator-cognitive performance layer of high-consequence systems and are flagged in the paper as design-stage frameworks pending empirical validation in shipped deployments. The synthesis is consistent with prior work by Friston [3], Beer [4], and the thermodynamic-AI literature [5]; differences are explicit in §2 and §5. This manuscript is a preprint prior to peer review.
 
-**About MILO.** MILO (Modular Intelligent Learning Orchestrator) is a patent-pending adaptive AI orchestration architecture aimed at high-consequence critical-infrastructure environments. Its central design commitment is *viability* — operational continuity under non-stationary conditions — rather than *prediction accuracy* against an expected future. The eight structural principles introduced in this paper and the eight operational integrity constraints (no coercion, individual baseline only, no surveillance, operator authority invariant, operational transparency, data sovereignty, override always available, independent oversight) together govern the architecture. The application submitted to the U.S. Department of Energy under the Genesis Mission [Executive Order 14363, November 2025] is currently under review; status updates will be disclosed if and when public information becomes available. The mark *~MILO*™ (USPTO Serial No. 99706004, intent-to-use, Class 009) and the underlying patent application are both pending. Public reference: https://github.com/jmontano1/milo-architecture. Author contact: jmontano@jmautomated.com.
+**About MILO.** MILO (Modular Intelligent Learning Orchestrator) is a patent-pending adaptive AI orchestration architecture for high-consequence critical-infrastructure environments. The full architectural reference — eight structural principles, eight operational integrity constraints, the unifying viability principle, and the trademark/patent status — is maintained as a single canonical document at https://github.com/jmontano1/milo-architecture (concept DOI: 10.5281/zenodo.20117025). Author contact: jmontano@jmautomated.com.
 
 ---
 
@@ -228,14 +228,12 @@ All architectural materials, source manuscripts, the reference implementation, a
 
 ---
 
-## Author Biography
+## About the author
 
-Jorge Enrique Flores Montano is the founder of JM Automated Solutions and the inventor of MILO (Modular Intelligent Learning Orchestrator), a patent-pending adaptive AI orchestration system. He holds a Master of Science in Industrial Engineering (December 2018), with a minor in Applied Statistics and a certification in Public Utilities Regulation Economics, and a Bachelor of Science in Mechatronics Engineering (May 2016), with a minor in Industrial Automation. He is a CONACYT-SENER federal scholar (selected 90 of 2,000 applicants) and a member of Alpha Pi Mu, the U.S. industrial-engineering honor society. He has over seven years of hands-on deployment experience in industrial vision and automation systems across the food, beverage, pharmaceutical, and medical-device manufacturing domains. His work in adaptive AI architecture focuses on cryptographic entropy sourcing, industrial control authentication, supervisory primacy for human-in-the-loop AI, and the structural principles of viable adaptive AI orchestration. MILO has been submitted under the U.S. Department of Energy's Genesis Mission as a candidate architecture for AI-enabled critical-infrastructure systems.
+Jorge Enrique Flores Montano (ORCID iD: [0009-0003-1859-8418](https://orcid.org/0009-0003-1859-8418); jmontano@jmautomated.com) is the founder of JM Automated Solutions and the inventor of MILO. A full biography is maintained at [https://www.milo-usa.com/jorge-enrique-flores-montano.html](https://www.milo-usa.com/jorge-enrique-flores-montano.html).
+
 
 ## Conflict of Interest and Funding Disclosure
 
 The author is the inventor of MILO (patent pending) and the founder of JM Automated Solutions. The eight structural principles articulated in this paper, including the two original frameworks proposed in Sections 3.7 and 3.8, are a contribution from a working development program in which the author retains sole authorship and inventive interest. No external funding was received for the preparation of this manuscript. The author retains all rights to MILO and to the original frameworks introduced herein.
 
----
-
-© 2026 Jorge Enrique Flores Montano · JM Automated Solutions · ~MILO™ is a trademark of Jorge Enrique Flores Montano · USPTO Serial No. 99706004 · Patent Pending.
