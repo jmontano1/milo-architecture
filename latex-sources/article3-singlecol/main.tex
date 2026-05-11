@@ -1,0 +1,110 @@
+\documentclass[11pt,letterpaper,oneside]{article}
+
+% ── Geometry ────────────────────────────────────────────────────────
+\usepackage[margin=1in,headheight=14pt]{geometry}
+
+% ── Fonts ──────────────────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}            % body serif; matches the reportlab build
+\usepackage[scaled=0.85]{helvet}  % sans for headings
+\usepackage{microtype}
+
+% ── Math + tables + lists ─────────────────────────────────────────
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\setlist{itemsep=0.2em,topsep=0.2em}
+
+% Pandoc-emitted \tightlist
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% ── Graphics ──────────────────────────────────────────────────────
+\usepackage{graphicx}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf,labelsep=period,justification=justified}
+
+% ── Color + hyperlinks ────────────────────────────────────────────
+\usepackage{xcolor}
+\definecolor{milonavy}{HTML}{1B365D}
+\definecolor{milorulegray}{HTML}{C9CDD2}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=milonavy,
+  citecolor=milonavy,
+  urlcolor=milonavy,
+  pdfauthor={Jorge Enrique Flores Montano},
+  pdftitle={Supervisory Primacy: Human-in-the-Loop AI Orchestration for High-Consequence Domains},
+  pdfkeywords={MILO, Modular Intelligent Learning Orchestrator, Jorge Flores Montano, Jorge Montano, Jorge Enrique Flores Montano, JM Automated Solutions, human-in-the-loop AI, HITL, Supervisory Primacy, AI oversight, human-AI interaction, EU AI Act Article 14, NIST AI RMF, Parasuraman-Sheridan-Wickens, levels of automation, operator authority, adaptive AI architecture, DOE Genesis Mission, patent pending, critical infrastructure, U.S. national interest},
+  pdfsubject={Supervisory Primacy as the architectural design principle by which human authority over consequential AI decisions becomes a constitutional property of an adaptive AI orchestration system rather than a runtime configuration. Consistent with EU AI Act Article 14, Parasuraman-Sheridan-Wickens supervisory control, and NIST AI RMF 1.0 Appendix C.},
+  pdfcreator={JM Automated Solutions},
+  pdfproducer={JM Automated Solutions}
+}
+
+% ── Section headings (navy, sans-serif) ───────────────────────────
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\large\bfseries\sffamily\color{milonavy}}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries\sffamily\color{milonavy}}{\thesubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.2em}{0.5em}
+\titlespacing*{\subsection}{0pt}{1em}{0.3em}
+
+% ── Running header + footer ────────────────────────────────────────
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrule}{{\color{milorulegray}\hrule height \headrulewidth}}
+\renewcommand{\footrule}{{\color{milorulegray}\hrule height \footrulewidth}}
+\fancyhead[C]{\small\itshape\color{milonavy} Supervisory Primacy: Human-in-the-Loop AI Orchestration for High-Consequence Dom...}
+\fancyfoot[C]{\small\color{milonavy} \textcopyright{}~2026 Jorge Enrique Flores Montano \textperiodcentered{} JM Automated Solutions \textperiodcentered{} Page \thepage{} of \pageref{LastPage}}
+\fancyfoot[R]{\small\bfseries\color{milonavy} \textasciitilde MILO\texttrademark}
+
+% Title-page style differs: no header, just footer
+\fancypagestyle{titlepage}{%
+  \fancyhf{}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0.4pt}%
+  \fancyfoot[C]{\small\color{milonavy} \textcopyright{}~2026 Jorge Enrique Flores Montano \textperiodcentered{} JM Automated Solutions \textperiodcentered{} Page \thepage{} of \pageref{LastPage}}%
+  \fancyfoot[R]{\small\bfseries\color{milonavy} \textasciitilde MILO\texttrademark}%
+}
+
+% Caption color
+\captionsetup[figure]{labelfont={bf,color=milonavy}}
+\captionsetup[table]{labelfont={bf,color=milonavy}}
+
+% ── Title block ───────────────────────────────────────────────────
+% These macros are populated by the build script before the document body.
+\newcommand{\milotitle}{Supervisory Primacy: Human-in-the-Loop AI Orchestration for High-Consequence Domains}
+\newcommand{\milosubtitle}{The Architectural Form of Human Authority in Adaptive AI Systems}
+\newcommand{\milodate}{May 2026}
+
+\begin{document}
+
+% ── Custom title page ─────────────────────────────────────────────
+\thispagestyle{titlepage}
+\begin{center}
+\vspace*{0.2in}
+{\sffamily\Large\bfseries\color{milonavy} \milotitle\par}
+\vspace{0.15in}
+{\itshape\normalsize \milosubtitle\par}
+\vspace{0.18in}
+{\color{milonavy}\rule{0.35\textwidth}{0.8pt}\par}
+\vspace{0.18in}
+{\large By \textbf{Jorge Enrique Flores Montano}\par}
+{\normalsize Founder, JM Automated Solutions\par}
+{\small\itshape\textcolor{black!70}{\textasciitilde MILO\texttrademark{} \textemdash{} Modular Intelligent Learning Orchestrator (patent pending)}\par}
+{\small\itshape\textcolor{black!70}{\milodate}\par}
+{\small\itshape\textcolor{black!70}{ORCID iD: \href{https://orcid.org/0009-0003-1859-8418}{0009-0003-1859-8418}}\par}
+{\small\itshape\textcolor{black!70}{DOI: \href{https://doi.org/10.5281/zenodo.20117025}{10.5281/zenodo.20117025}}\par}
+{\small\itshape\textcolor{black!70}{Public reference: \href{https://github.com/jmontano1/milo-architecture}{github.com/jmontano1/milo-architecture}}\par}
+\vspace{0.15in}
+{\color{milonavy}\rule{\textwidth}{0.6pt}\par}
+\end{center}
+
+\input{body.tex}
+
+\end{document}
