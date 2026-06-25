@@ -58,6 +58,8 @@ flowchart LR
 
 Every visible state in the architecture is backed by a persisted event. Audit precedes delivery; explicit-target dispatch precludes implicit routing; reflex predicates short-circuit critical signals before subscribers see them; operator override is always available and always logged. A minimal runnable reference implementing four of these mechanisms in ~150 lines of standard-library Python is provided in [`examples/persist_before_deliver.py`](examples/persist_before_deliver.py).
 
+For a fuller, engineer-facing walkthrough of how the subsystems are decomposed — described in plain software-engineering terms (composition root, message bus, gateway, worker pool, supervisor) — see [**ARCHITECTURE.md**](ARCHITECTURE.md).
+
 ---
 
 ## Architectural papers
