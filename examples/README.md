@@ -31,6 +31,43 @@ Each command in the audit log records the operator, the target, the payload, and
 
 This reference implements only the architectural *substrate*: append-only continuity sufficient for post-hoc reconstructability. Production deployments in high-consequence environments add three further commitments (per Article 3 of the architectural series): **cryptographic chain-of-custody** for audit records, **custodial separation** between the orchestrator and an independent integrity service, and **external WORM replication** to a sink under separate administrative control. Those hardening commitments are required for the high-consequence deployment posture; they are not implemented here.
 
+## reflex_individual_baseline.py
+
+A minimal reference for the **operator-cognitive layer** (Principles 7–8), which is the
+*original* contribution of the architecture and is otherwise design-stage only. It implements a
+fast, pre-reasoning **reflex arc** that learns an individual operator's *own* behavioral
+baseline and, on a sharp deviation from that baseline, **adds** safeguards around the reasoning
+engine — strictly honoring the integrity constraints:
+
+1. **Individual baseline only (Principle 7)** — escalation is driven by per-user z-score
+   deviation from the operator's own rolling baseline; there are **no fixed or population
+   thresholds**.
+2. **Operator authority is the invariant (Principle 8 / Constraint #4)** — the reflex only ever
+   *adds* protective actions (stronger confirmation, simpler output, stated uncertainty). It
+   **never blocks or preempts** reasoning: every decision carries `reasoning_proceeds: true`.
+3. **Hysteresis** — escalation is immediate; de-escalation requires *sustained* return to the
+   operator's normal pattern, so the reflex does not oscillate.
+4. **No surveillance (Constraints #3, #6, #7)** — the baseline is in-memory and bounded and is
+   never persisted as a profile; only the reflex *decision* is appended to `reflex_audit.jsonl`.
+
+> **What this is not:** it does **not** detect emotion, stress, or intent — those would be
+> unvalidated claims. It detects *deviation from the operator's established pattern* and responds
+> conservatively. Reference only; not the production system.
+
+### Run
+
+```bash
+python3 reflex_individual_baseline.py
+```
+
+It learns a synthetic operator's baseline, raises `HEIGHTENED` on a turn that deviates ~58 SD
+from that operator's own norm (adding safeguards while reasoning still proceeds), then
+de-escalates with hysteresis as the normal pattern returns. Inspect the audited decisions:
+
+```bash
+cat reflex_audit.jsonl | python3 -m json.tool --no-ensure-ascii | less
+```
+
 ## Related reading
 
 - [Article 2 — Latency-Aware Authentication](../articles/02-Latency-Aware-Authentication.md) — formal sketch of the pre-execution gate, consequence-class composition with ISA/IEC 62443 SL tiers.
