@@ -19,6 +19,23 @@
 
 ---
 
+## Read MILO in 60 seconds
+
+**In plain terms:** MILO is an architecture for AI in places where failure is catastrophic — power grids, nuclear facilities, manufacturing lines — built to stay **auditable and human-controllable even in conditions it was never trained for.** Where mainstream AI optimizes for prediction accuracy, MILO optimizes for *viability*.
+
+- **The idea** → the [eight structural principles](#eight-structural-principles): six established physical, control-theoretic, and statistical laws applied as design constraints, plus two original operator-layer frameworks.
+- **As software** → [`ARCHITECTURE.md`](ARCHITECTURE.md) — the engineer-facing decomposition (composition root · message bus · gateway · worker pool · supervisor).
+- **What actually runs** → [`examples/persist_before_deliver.py`](examples/persist_before_deliver.py), a ~150-line standard-library reference. Run it in 60 seconds: [`QUICKSTART.md`](QUICKSTART.md).
+- **Real vs. design-stage, and what's original** → the [`EVALUATION.md`](EVALUATION.md) reviewer's guide.
+
+| Layer | State | Evidence |
+|---|---|---|
+| Audit-first command flow · pre-execution gate · single-target dispatch · reflex halt | ✅ **runnable reference** | [`examples/persist_before_deliver.py`](examples/persist_before_deliver.py) |
+| Inference gateway · agent fleet · health supervisor · coordination ledger · adaptation plane | 🔶 **design-stage** | [`ARCHITECTURE.md`](ARCHITECTURE.md) §2–§3 |
+| Operator-cognitive layer (Principles 7–8) | 🔶 design-stage · **original** | [`PRINCIPLES.md`](PRINCIPLES.md) · [Article 4](articles/04-Eight-Structural-Principles.md) |
+
+---
+
 ## What MILO is
 
 MILO is a **patent-pending adaptive AI orchestration architecture** designed for environments where the cost of failure is severe: energy grid control rooms, nuclear facilities, advanced manufacturing lines, autonomous robotics under human supervision, satellite and space operations, and human-in-the-loop AI for high-consequence decision support.
