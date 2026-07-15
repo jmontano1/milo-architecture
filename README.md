@@ -18,6 +18,13 @@
 | **License (docs)** | [CC BY 4.0](LICENSE) · *All source-code rights reserved; patent pending* |
 | **Contact** | jmontano@jmautomated.com |
 | **Verify claims** | [VERIFY.md](VERIFY.md) · [CLAIMS.md](CLAIMS.md) · [STANDARDS_CROSSWALK.md](STANDARDS_CROSSWALK.md) · [MECHANISM_MAP.md](MECHANISM_MAP.md) |
+| **Independent reviewers** | **Start here → [FOR_INDEPENDENT_REVIEWERS.md](FOR_INDEPENDENT_REVIEWERS.md)** |
+
+### Arrived from a paper or exhibit that cites this repository?
+
+This GitHub URL is the public architectural reference printed alongside the MILO article series
+and related materials. Open **[FOR_INDEPENDENT_REVIEWERS.md](FOR_INDEPENDENT_REVIEWERS.md)** first
+(60-second path: VERIFY → CLAIMS → demos → articles/DOIs). No login required.
 
 **Quick self-check (no network, no secrets):**
 
