@@ -2,6 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20117025.svg)](https://doi.org/10.5281/zenodo.20117025)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![reference-ci](https://github.com/jmontano1/milo-architecture/actions/workflows/ci.yml/badge.svg)](https://github.com/jmontano1/milo-architecture/actions/workflows/ci.yml)
 
 > *MILO does not predict the future. It remains viable in any future.*
 
@@ -12,10 +13,17 @@
 | **DOI** | [`10.5281/zenodo.20117025`](https://doi.org/10.5281/zenodo.20117025) (concept DOI; persistent across versions) |
 | **Trademark** | ~MILO™ — USPTO Serial No. **99706004** (filed March 16, 2026; intent-to-use, Class 009) |
 | **Patent** | **Patent Pending** |
-| **Federal submission** | Submitted to the U.S. Department of Energy **Genesis Mission** (Executive Order 14363, November 2025) — currently under review |
+| **Federal engagement** | Materials transmitted to the U.S. Department of Energy **Genesis Mission** (EO 14363, Nov 2025) under identifiers **MILO-ES-2026-002** and **MILO-ES-2026-003-DOE** — **transmission only**; no endorsement, selection, funding, or award is claimed |
 | **Inventor** | Jorge Enrique Flores Montano · Founder, JM Automated Solutions · [ORCID 0009-0003-1859-8418](https://orcid.org/0009-0003-1859-8418) |
 | **License (docs)** | [CC BY 4.0](LICENSE) · *All source-code rights reserved; patent pending* |
 | **Contact** | jmontano@jmautomated.com |
+| **Verify claims** | [VERIFY.md](VERIFY.md) · [CLAIMS.md](CLAIMS.md) · [STANDARDS_CROSSWALK.md](STANDARDS_CROSSWALK.md) · [MECHANISM_MAP.md](MECHANISM_MAP.md) |
+
+**Quick self-check (no network, no secrets):**
+
+```bash
+python3 examples/test_reference.py
+```
 
 ---
 

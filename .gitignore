@@ -29,8 +29,9 @@ Thumbs.db
 __pycache__/
 node_modules/
 
-# Demo runtime artifacts — written by examples/persist_before_deliver.py
+# Demo runtime artifacts — written by examples/*.py
 examples/audit.jsonl
+examples/override_audit.jsonl
 
 # Generated typesetting intermediates (we ship the final PDFs, not LaTeX scratch)
 *.aux

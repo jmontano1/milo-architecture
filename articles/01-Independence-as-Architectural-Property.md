@@ -232,7 +232,7 @@ The principle is falsifiable: a system whose audit trail is incomplete, whose re
 
 - **Mark.** *~MILO™* — U.S. Patent and Trademark Office Serial No. 99706004; filed March 16, 2026; intent-to-use; International Class 009 (downloadable AI software). The leading tilde disambiguates from senior MILO marks held by unrelated owners in different International Classes.
 - **Patent.** Patent application pending for the underlying software architecture. Implementation may require a patent license once issued; nothing in this document or its CC BY 4.0 license on the manuscript text grants any patent license.
-- **Federal submission.** Submitted to the U.S. Department of Energy under the *Genesis Mission* (Executive Order 14363, November 2025); currently under review. No acceptance or grant outcome is claimed.
+- **Federal submission.** Submitted to the U.S. Department of Energy under the *Genesis Mission* (Executive Order 14363, November 2025); record reflects transmission only. No acceptance, selection, funding, or grant outcome is claimed.
 - **Concept DOI.** [10.5281/zenodo.20117025](https://doi.org/10.5281/zenodo.20117025) — Zenodo, persistent across versions.
 - **Public reference.** [https://github.com/jmontano1/milo-architecture](https://github.com/jmontano1/milo-architecture).
 - **Author contact.** Jorge Enrique Flores Montano · jmontano@jmautomated.com · ORCID iD: [0009-0003-1859-8418](https://orcid.org/0009-0003-1859-8418).

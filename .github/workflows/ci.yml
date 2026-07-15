@@ -1,0 +1,22 @@
+name: reference-ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  self-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run public reference self-checks
+        run: python3 examples/test_reference.py
+      - name: Demo smoke
+        run: |
+          python3 examples/persist_before_deliver.py
+          python3 examples/supervisory_primacy_override.py
