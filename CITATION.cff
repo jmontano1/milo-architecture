@@ -5,20 +5,27 @@ type: software
 authors:
   - family-names: "Flores Montano"
     given-names: "Jorge Enrique"
-    affiliation: "JM Automated Solutions"
+    affiliation: "JM Automated Solutions, LLC"
     alias: "Jorge Montano"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.20117025"
+    value: "10.5281/zenodo.20117024"
     description: "Zenodo concept DOI for the MILO architectural reference (all versions)."
+  - type: doi
+    value: "10.5281/zenodo.20117025"
+    description: "Zenodo version DOI for v1.0.0."
   - type: other
     value: "USPTO Serial No. 99706004"
-    description: "U.S. trademark application for ~MILO, filed 2026-03-16, Class 009 (downloadable AI software)."
+    description: "U.S. trademark application for ~MILO, filed 2026-03-16, Class 009 (downloadable AI software). Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted."
 repository-code: "https://github.com/jmontano1/milo-architecture"
 abstract: >
-  MILO (Modular Intelligent Learning Orchestrator) is a patent-pending adaptive
-  AI orchestration architecture for high-consequence critical-infrastructure
-  environments. The architecture is governed by eight structural principles
+  MILO (Modular Intelligent Learning Orchestrator) is a human-in-the-loop
+  disposition layer above the plant PLC for automated inspection
+  (accept/reject/hold) on regulated food, pharmaceutical and medical-device
+  lines. Perception scores come from the vision vendor's models; MILO
+  proposes, and a named person or a pre-approved rule disposes. The papers in
+  this series are self-published preprints (Zenodo), not peer-reviewed. The
+  architecture is governed by eight structural principles
   (Second Law of Thermodynamics, Ashby's Law of Requisite Variety, Shannon
   Information Theory, the Principle of Least Action, Lyapunov-style bounded
   response, Power-Law Distribution Architecture, and two original frameworks
@@ -28,9 +35,7 @@ abstract: >
   no surveillance, operator authority invariant, operational transparency,
   data sovereignty, override always available, independent oversight). The
   system's unifying principle is "MILO does not predict the future. It remains
-  viable in any future." MILO has been submitted under the U.S. Department of
-  Energy Genesis Mission (Executive Order 14363, November 2025) as a candidate
-  architecture for AI-enabled critical-infrastructure systems.
+  viable in any future."
 keywords:
   - MILO
   - Modular Intelligent Learning Orchestrator
@@ -47,8 +52,8 @@ keywords:
   - ISA/IEC 62443
   - EU AI Act Article 14
   - NIST AI RMF
-  - DOE Genesis Mission
-  - patent pending
+  - machine vision
+  - quality inspection
 license: CC-BY-4.0
 date-released: 2026-05-10
 references:

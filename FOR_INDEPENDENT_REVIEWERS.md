@@ -10,11 +10,11 @@ You do **not** need a private account or any secret credentials.
 
 | Item | Detail |
 |---|---|
-| Author | Jorge Enrique Flores Montano · JM Automated Solutions |
+| Author | Jorge Enrique Flores Montano · JM Automated Solutions, LLC |
 | ORCID | https://orcid.org/0009-0003-1859-8418 |
-| Concept DOI | https://doi.org/10.5281/zenodo.20117025 |
-| Trademark | ~MILO™ · USPTO Serial **99706004** (intent-to-use) |
-| Patent | Patent pending |
+| Concept DOI (all versions) | https://doi.org/10.5281/zenodo.20117024 |
+| v1.0.0 DOI | https://doi.org/10.5281/zenodo.20117025 |
+| Patent / trademark | Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted. ~MILO trademark application Serial No. 99706004. |
 | License (docs/manuscripts) | CC BY 4.0 · see [LICENSE](LICENSE) |
 
 ## What to open (in order)
@@ -36,21 +36,16 @@ python3 examples/supervisory_primacy_override.py
 
 ## Claim hygiene (read carefully)
 
-- **DOE Genesis Mission:** materials were **transmitted** under document identifiers  
-  **MILO-ES-2026-002** and **MILO-ES-2026-003-DOE** (and related FOA materials where applicable).  
-  This repository claims **transmission only** — **not** DOE endorsement, selection, partnership,  
-  contract, funding, or award.  
 - **IEEE TII manuscript TII-26-4335:** **transmission / submission record only** —  
   **not** acceptance, peer-review assignment, or publication.  
-- **Zenodo:** open archive with permanent DOIs; **not** peer review by Zenodo.  
+- **Zenodo:** the papers are self-published preprints with permanent DOIs; **not** peer-reviewed.  
 - **Demos:** pedagogical reference implementations of architectural *discipline*;  
-  **not** production OT/SCADA software and **not** customer deployments.
+  toy demos, **not** connected to any PLC. MILO is pre-commercial; no customer deployments exist.
 
 ## What you will **not** find here
 
-- Customer names, plant data, NDA materials, or employer trade secrets  
-- Immigration case files or confidential counsel exhibits  
-- Live commercial product backends (separate company surfaces)
+- Plant data, NDA materials, or employer trade secrets  
+- Source code of the MILO implementation (not public)
 
 ## Continuous integrity
 
