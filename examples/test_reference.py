@@ -2,7 +2,7 @@
 """Self-check for the public reference implementation.
 
 Runs without network, without secrets, and without importing the private
-MILO mono-repo. Safe for CI and for third-party verification.
+MILO source code. Safe for CI and for third-party verification.
 
     python3 examples/test_reference.py
 """
@@ -36,9 +36,9 @@ def test_demo_runs_and_gates() -> None:
         )
         assert r.returncode == 0, r.stderr or r.stdout
         out = r.stdout
-        assert "blocked" in out, "over-threshold force should be blocked"
-        assert "recommended_alternative" in out, "near-threshold force should recommend"
-        assert "applied_n" in out, "routine force should apply"
+        assert "'held'" in out, "high-consequence unit should be held"
+        assert "recommended_alternative" in out, "uncertain-band score should recommend a hold"
+        assert "flag_written" in out, "routine unit should write an inspection-tier flag"
         audit = ROOT / "audit.jsonl"
         assert audit.is_file(), "audit.jsonl must be written before/after dispatch"
         lines = [ln for ln in audit.read_text().splitlines() if ln.strip()]

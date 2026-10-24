@@ -9,15 +9,19 @@ Minimal public reference for *Supervisory Primacy* (Article 3):
   - Every override is logged on the same append-only audit substrate.
   - The AI never silently bypasses the human; the human never acts without trail.
 
-This is pedagogical code (stdlib only). It is NOT production MILO, NOT a
-customer deployment, and contains NO proprietary process data.
+TOY DEMO; NOT CONNECTED TO ANY PLC. plc.inspection_flag.* targets are
+in-memory stand-ins for inspection-tier flags. Safety functions (E-stop,
+interlocks, safety PLC/SIS) are outside MILO and are never commanded.
+
+This is pedagogical code (stdlib only). It is NOT production MILO and
+contains NO proprietary process data.
 
 Run:
 
     python3 supervisory_primacy_override.py
 
 License: CC BY 4.0
-Author: Jorge Enrique Flores Montano · JM Automated Solutions
+Author: Jorge Enrique Flores Montano · JM Automated Solutions, LLC
 """
 
 from __future__ import annotations
@@ -60,12 +64,12 @@ class SupervisedBus:
         }
         persist(proposal)
 
-        # Toy policy: "isolate_feeder" is high-consequence → hold for human.
-        if target == "grid.isolate_feeder":
+        # Toy policy: a reject flag is high-consequence → hold for a named person.
+        if target == "plc.inspection_flag.reject":
             decision = {
                 "kind": "gate_result",
                 "decision": "hold",
-                "reason": "high-consequence isolation requires human confirmation",
+                "reason": "high-consequence disposition requires a named person",
                 "target": target,
             }
             persist(decision)
@@ -119,31 +123,31 @@ def main() -> int:
         AUDIT_PATH.unlink()
 
     bus = SupervisedBus()
-    bus.register("grid.isolate_feeder", lambda p: {"isolated": p.get("feeder_id")})
+    bus.register("plc.inspection_flag.reject", lambda p: {"flag_written": "reject", "unit_id": p.get("unit_id")})
     bus.register("log.write", lambda p: {"logged": p.get("message")})
 
     print("─" * 60)
-    print(" MILO supervisory-primacy override — minimal reference")
+    print(" MILO supervisory-primacy override — toy demo (not connected to any PLC)")
     print("─" * 60)
 
     print("\n1) Low-consequence log — allowed:")
-    print("   ", bus.propose("log.write", {"message": "shift start"}, operator="op:jorge"))
+    print("   ", bus.propose("log.write", {"message": "shift start"}, operator="op:reviewer"))
 
-    print("\n2) High-consequence isolation — held for human:")
+    print("\n2) Proposed reject of unit U-0017 — held for a named person:")
     held = bus.propose(
-        "grid.isolate_feeder",
-        {"feeder_id": "F-17"},
-        operator="op:jorge",
+        "plc.inspection_flag.reject",
+        {"unit_id": "U-0017"},
+        operator="op:reviewer",
     )
     print("   ", held)
     assert held["decision"] == "hold"
 
-    print("\n3) Human overrides hold with rationale — executed + audited:")
+    print("\n3) Named person authorizes the held disposition with rationale — executed + audited:")
     out = bus.override_hold(
-        "grid.isolate_feeder",
-        {"feeder_id": "F-17"},
-        operator="op:jorge",
-        rationale="field crew confirmed clear; emergency isolation authorized",
+        "plc.inspection_flag.reject",
+        {"unit_id": "U-0017"},
+        operator="op:reviewer",
+        rationale="reviewer confirmed defect on per-unit review; reject authorized",
     )
     print("   ", out)
 

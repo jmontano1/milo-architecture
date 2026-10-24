@@ -15,12 +15,18 @@ the manuscripts:
      target. No implicit resolvers, no opaque routing magic.
 
   3. Reflex predicates before fanout — critical signals are evaluated
-     against reflex predicates and may dispatch a halt command before
-     subscribers see the underlying signal.
+     against reflex predicates and may request a hold of the affected unit
+     before subscribers see the underlying signal.
 
   4. Pre-execution gating with three outputs — every consequential action
      passes through a pre-execution gate that returns one of {allow,
      hold/block, recommend}. Operator override is always logged.
+
+TOY DEMO; NOT CONNECTED TO ANY PLC. Targets named plc.inspection_flag.*
+are in-memory stand-ins for inspection-tier flags (release / hold / reject).
+Scores are toy values standing in for the vision vendor's model scores.
+Safety functions (E-stop, interlocks, safety PLC/SIS) are outside MILO and
+are never commanded.
 
 This is a minimal, dependency-free reference. It is NOT the production
 MILO implementation. It is sufficient to verify that the architectural
@@ -36,8 +42,10 @@ resulting state. Re-run the script and observe that the audit log
 appends rather than overwrites.
 
 License: CC BY 4.0
-Author: Jorge Enrique Flores Montano · JM Automated Solutions
-USPTO Serial No. 99706004 (~MILO™) · Patent Pending.
+Author: Jorge Enrique Flores Montano · JM Automated Solutions, LLC
+Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026;
+No. 64/016,665, Mar 25, 2026); not granted. ~MILO trademark application
+Serial No. 99706004.
 """
 
 from __future__ import annotations
@@ -97,8 +105,8 @@ class CommandBus:
         if self.pre_gate is not None:
             gate_result = self.pre_gate(cmd)
             persist({"kind": "gate_result", "for_command": target, **gate_result})
-            if gate_result["decision"] == "block":
-                return {"status": "blocked", "reason": gate_result["reason"]}
+            if gate_result["decision"] == "hold":
+                return {"status": "held", "reason": gate_result["reason"]}
             if gate_result["decision"] == "recommend":
                 # A "recommend" output surfaces a safer alternative; the
                 # operator must re-issue, so we stop here.
@@ -140,69 +148,86 @@ class SignalBus:
             sub(signal)
 
 
-# ── Demo wiring ────────────────────────────────────────────────────────
+# ── Demo wiring (toy demo; not connected to any PLC) ──────────────────
+UNCERTAIN_BAND = (0.40, 0.60)  # toy values for the demo only
+
+
 def main() -> None:
     bus = CommandBus()
 
-    # Pre-execution gate: refuse force commands above a safety threshold.
+    # Pre-execution gate: allow / hold / recommend on a proposed release flag.
     def gate(cmd: dict) -> dict:
-        if cmd["target"] == "actuator.apply_force":
-            force_n = cmd["payload"].get("force_n", 0)
-            if force_n > 100:
+        if cmd["target"] == "plc.inspection_flag.release":
+            score = cmd["payload"].get("vendor_score", 0.0)
+            if cmd["payload"].get("consequence") == "high":
                 return {
-                    "decision": "block",
-                    "reason": f"force_n={force_n} exceeds safety threshold 100 N",
+                    "decision": "hold",
+                    "reason": "high-consequence unit held for a named person",
                 }
-            if force_n > 80:
+            if UNCERTAIN_BAND[0] <= score <= UNCERTAIN_BAND[1]:
                 return {
                     "decision": "recommend",
-                    "alternative": {"target": "actuator.apply_force", "payload": {"force_n": 80}},
-                    "reason": "force_n approaching safety limit; suggest 80 N",
+                    "alternative": {
+                        "target": "plc.inspection_flag.hold",
+                        "payload": {"unit_id": cmd["payload"].get("unit_id")},
+                    },
+                    "reason": "vendor score in uncertain band; recommend hold for per-unit review",
                 }
         return {"decision": "allow"}
 
     bus.pre_gate = gate
 
     # Register exactly ONE handler per target. No implicit routing.
-    bus.register("actuator.apply_force", lambda p: {"applied_n": p["force_n"]})
+    # Handlers only record an in-memory flag; nothing is sent to a PLC.
+    for flag in ("release", "hold", "reject"):
+        bus.register(
+            f"plc.inspection_flag.{flag}",
+            lambda p, flag=flag: {"flag_written": flag, "unit_id": p.get("unit_id")},
+        )
     bus.register("log.write", lambda p: {"logged": p["message"]})
 
-    # Signal substrate with a reflex that issues a halt on critical signals.
+    # Signal substrate with a reflex that requests a hold on critical signals.
     signals = SignalBus(bus=bus)
 
-    def reflex_emergency_halt(signal: dict) -> dict | None:
+    def reflex_critical_signal_hold(signal: dict) -> dict | None:
         if signal.get("severity") == "critical":
-            return {"target": "actuator.apply_force", "payload": {"force_n": 0}}
+            return {"target": "plc.inspection_flag.hold", "payload": {"unit_id": signal.get("unit_id")}}
         return None
 
-    signals.reflexes.append(reflex_emergency_halt)
+    signals.reflexes.append(reflex_critical_signal_hold)
 
     print("─" * 60)
-    print(" MILO persist-before-deliver — minimal reference")
+    print(" MILO persist-before-deliver — toy demo (not connected to any PLC)")
     print("─" * 60)
     print()
     print("Audit log: ", AUDIT_PATH)
     print()
 
-    # 1) Routine action — allowed, logged, executed.
-    print("1) Routine force application (50 N):")
-    print("   ", bus.dispatch("actuator.apply_force", {"force_n": 50}, operator="op:jorge"))
+    # 1) Confident score, routine unit — allowed, logged, flag written.
+    print("1) Confident vendor score, routine unit (U-0001):")
+    print("   ", bus.dispatch("plc.inspection_flag.release",
+                             {"unit_id": "U-0001", "vendor_score": 0.97, "consequence": "routine"},
+                             operator="op:reviewer"))
 
-    # 2) Near-threshold action — gate recommends a safer alternative.
-    print("2) Near-threshold force (90 N):")
-    print("   ", bus.dispatch("actuator.apply_force", {"force_n": 90}, operator="op:jorge"))
+    # 2) Uncertain score — gate recommends a hold instead.
+    print("2) Vendor score in uncertain band (U-0002):")
+    print("   ", bus.dispatch("plc.inspection_flag.release",
+                             {"unit_id": "U-0002", "vendor_score": 0.52, "consequence": "routine"},
+                             operator="op:reviewer"))
 
-    # 3) Over-threshold action — gate blocks.
-    print("3) Over-threshold force (150 N):")
-    print("   ", bus.dispatch("actuator.apply_force", {"force_n": 150}, operator="op:jorge"))
+    # 3) High-consequence unit — gate holds for a named person.
+    print("3) High-consequence unit (U-0003):")
+    print("   ", bus.dispatch("plc.inspection_flag.release",
+                             {"unit_id": "U-0003", "vendor_score": 0.95, "consequence": "high"},
+                             operator="op:reviewer"))
 
-    # 4) Critical signal arrives — reflex auto-halts before subscribers see it.
-    print("4) Critical signal arrives → reflex dispatches emergency halt:")
-    signals.emit({"name": "thermal_runaway", "severity": "critical"})
+    # 4) Critical signal arrives — reflex requests a hold before subscribers see it.
+    print("4) Critical signal arrives → reflex requests a hold of the affected unit:")
+    signals.emit({"name": "vendor_score_drift", "severity": "critical", "unit_id": "U-0004"})
 
     # 5) Unknown target — explicit-target dispatch refuses.
     print("5) Unknown target:")
-    print("   ", bus.dispatch("nonexistent.target", {}, operator="op:jorge"))
+    print("   ", bus.dispatch("nonexistent.target", {}, operator="op:reviewer"))
 
     print()
     print("Done. Audit trail written to:", AUDIT_PATH)
