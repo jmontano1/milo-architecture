@@ -4,6 +4,8 @@ Five standalone manuscripts articulating the MILO adaptive AI orchestration arch
 
 PDFs of each paper are available in [`../pdfs/`](../pdfs/).
 
+> **All five papers are self-published preprints (Zenodo); not peer-reviewed.**
+
 ---
 
 ## 1. Independence as an Architectural Property
@@ -78,4 +80,4 @@ Each paper is self-contained. Suggested orders depending on reader:
 
 ---
 
-© 2026 Jorge Enrique Flores Montano · JM Automated Solutions · ~MILO™ is a trademark of Jorge Enrique Flores Montano · USPTO Serial No. 99706004 · Patent Pending.
+© 2026 Jorge Enrique Flores Montano · JM Automated Solutions, LLC · ~MILO™ is a trademark of Jorge Enrique Flores Montano · Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted. ~MILO trademark application Serial No. 99706004.

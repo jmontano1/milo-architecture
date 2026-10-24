@@ -6,16 +6,16 @@
 
 > *MILO does not predict the future. It remains viable in any future.*
 
-**Adaptive AI orchestration for high-consequence critical-infrastructure environments.**
+**Human-in-the-loop disposition layer for automated inspection in regulated manufacturing.**
+
+> **Scope of the proposed endeavor.** MILO is a human-in-the-loop disposition layer above the plant PLC for automated inspection (accept/reject/hold) on regulated food, pharmaceutical and medical-device lines. The papers below discuss general architectural principles; applications outside industrial inspection are research discussion, not the product scope.
 
 | | |
 |---|---|
-| **DOI** | [`10.5281/zenodo.20117025`](https://doi.org/10.5281/zenodo.20117025) (concept DOI; persistent across versions) |
-| **Trademark** | ~MILO™ — USPTO Serial No. **99706004** (filed March 16, 2026; intent-to-use, Class 009) |
-| **Patent** | **Patent Pending** |
-| **Federal engagement** | Materials transmitted to the U.S. Department of Energy **Genesis Mission** (EO 14363, Nov 2025) under identifiers **MILO-ES-2026-002** and **MILO-ES-2026-003-DOE** — **transmission only**; no endorsement, selection, funding, or award is claimed |
-| **Inventor** | Jorge Enrique Flores Montano · Founder, JM Automated Solutions · [ORCID 0009-0003-1859-8418](https://orcid.org/0009-0003-1859-8418) |
-| **License (docs)** | [CC BY 4.0](LICENSE) · *All source-code rights reserved; patent pending* |
+| **DOI** | Concept DOI [`10.5281/zenodo.20117024`](https://doi.org/10.5281/zenodo.20117024) (all versions); v1.0.0 DOI [`10.5281/zenodo.20117025`](https://doi.org/10.5281/zenodo.20117025) |
+| **Patent / trademark** | Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted. ~MILO trademark application Serial No. 99706004. (Trademark filed March 16, 2026; intent-to-use, Class 009.) |
+| **Inventor** | Jorge Enrique Flores Montano · Founder, JM Automated Solutions, LLC · [ORCID 0009-0003-1859-8418](https://orcid.org/0009-0003-1859-8418) |
+| **License (docs)** | [CC BY 4.0](LICENSE) · *All source-code rights reserved* |
 | **Contact** | jmontano@jmautomated.com |
 | **Verify claims** | [VERIFY.md](VERIFY.md) · [CLAIMS.md](CLAIMS.md) · [STANDARDS_CROSSWALK.md](STANDARDS_CROSSWALK.md) · [MECHANISM_MAP.md](MECHANISM_MAP.md) |
 | **Independent reviewers** | **Start here → [FOR_INDEPENDENT_REVIEWERS.md](FOR_INDEPENDENT_REVIEWERS.md)** |
@@ -36,11 +36,11 @@ python3 examples/test_reference.py
 
 ## What MILO is
 
-MILO is a **patent-pending adaptive AI orchestration architecture** designed for environments where the cost of failure is severe: energy grid control rooms, nuclear facilities, advanced manufacturing lines, autonomous robotics under human supervision, satellite and space operations, and human-in-the-loop AI for high-consequence decision support.
+MILO is a **human-in-the-loop disposition layer above the plant PLC** for automated inspection on regulated food, pharmaceutical and medical-device lines. Perception scores come from the vision vendor's models; MILO proposes a disposition, and a named person or a rule approved in advance at commissioning disposes. MILO's only command path is one conduit to the plant PLC, which writes inspection-tier flags; MILO has no connection to the safety PLC. If MILO or a record write fails, MILO issues no command and the plant PLC's own fail-safe default applies. The plant-floor design is set out in the MILO Methods Statement.
 
 The dominant paradigm in AI today optimizes for **prediction accuracy** against an expected future distribution. MILO is designed for **viability** — the capacity to remain operational, auditable, and human-controllable under operational futures the system was not trained to expect. The architectural mechanisms that produce viability — audit-first command flow, modular subsystems with strict separation of concerns, bounded recovery pathways, tail-event preparation, reviewed-outcome learning, and preserved operator authority — together produce a system that does not require accurate prediction to remain useful.
 
-MILO is grounded in established standards (NIST SP 800-82r3 for operational-technology security, NIST SP 800-90B for cryptographic entropy, ISA/IEC 62443 for industrial cybersecurity, EU AI Act Article 14 for human oversight, NIST AI RMF 1.0 for AI risk management) and in the cybernetics, control theory, information theory, and resilience-engineering lineages of Beer, Ashby, Shannon, Lyapunov, Hollnagel, Taleb, and Clauset.
+MILO references established standards as design intent (NIST SP 800-82r3 for operational-technology security, NIST SP 800-90B for cryptographic entropy, ISA/IEC 62443 for industrial cybersecurity, EU AI Act Article 14 for human oversight, NIST AI RMF 1.0 for AI risk management), not as a certification or compliance claim; compliance is assessed at each plant's commissioning and validation. It draws on the cybernetics, control theory, information theory, and resilience-engineering lineages of Beer, Ashby, Shannon, Lyapunov, Hollnagel, Taleb, and Clauset.
 
 ---
 
@@ -53,7 +53,7 @@ flowchart LR
     BUS[Audit-First Command Bus<br/><i>persist-before-deliver</i>]
     SUB[Discrete Single-Responsibility<br/>Subsystems]
     SIG[Audit-First Signal Substrate<br/>reflex predicates before fanout]
-    REFLEX[Emergency-Halt Reflex]
+    REFLEX[Critical-Signal Hold<br/>hold request to plant PLC]
     AUDIT[(Append-Only Audit Log<br/>+ cryptographic chain-of-custody<br/>+ custodial separation<br/>+ external WORM replication)]
 
     OP -->|"consequential<br/>action"| GATE
@@ -63,7 +63,7 @@ flowchart LR
     SUB -->|signals| SIG
     SIG -->|"critical"| REFLEX
     SIG -.->|"non-critical<br/>fanout"| SUB
-    REFLEX -->|halt cmd| BUS
+    REFLEX -->|hold request| BUS
 
     BUS -.persists.-> AUDIT
     SIG -.persists.-> AUDIT
@@ -71,18 +71,18 @@ flowchart LR
     GATE -.persists.-> AUDIT
 ```
 
-Every visible state in the architecture is backed by a persisted event. Audit precedes delivery; explicit-target dispatch precludes implicit routing; reflex predicates short-circuit critical signals before subscribers see them; operator override is always available and always logged. A minimal runnable reference implementing four of these mechanisms in ~150 lines of standard-library Python is provided in [`examples/persist_before_deliver.py`](examples/persist_before_deliver.py).
+Every visible state in the architecture is backed by a persisted event. Audit precedes delivery; explicit-target dispatch precludes implicit routing; reflex predicates short-circuit critical signals before subscribers see them; operator override is always available and always logged. Safety functions (E-stop, interlocks, safety PLC/SIS) are outside MILO and are never commanded by it. A minimal runnable reference implementing four of these mechanisms in ~150 lines of standard-library Python is provided in [`examples/persist_before_deliver.py`](examples/persist_before_deliver.py).
 
-For a fuller, engineer-facing walkthrough of how the subsystems are decomposed — described in plain software-engineering terms (composition root, message bus, gateway, worker pool, supervisor) — see [**ARCHITECTURE.md**](ARCHITECTURE.md).
+For where the plant-floor design is documented, see [**ARCHITECTURE.md**](ARCHITECTURE.md).
 
 ---
 
 ## Architectural papers
 
-Five standalone papers articulate MILO's architecture, each grounded in established external sources and verifiable against public standards. Two PDF formats are provided for every paper:
+Five standalone papers articulate MILO's architecture, each grounded in established external sources. **All five are self-published preprints (Zenodo); not peer-reviewed.** Two PDF formats are provided for every paper:
 
 - **Standard PDF** (`pdfs/`) — rendered from markdown via ReportLab. Primary citation-anchor version with inline architectural figures, hyperlinked references, and PDF bookmarks.
-- **Scholarly LaTeX PDF** (`pdfs-singlecol/`) — single-column scholarly typesetting via pandoc + tectonic with the LaTeX `article` class. The full LaTeX source bundle (with figures) is in [`latex-sources/`](latex-sources/) so any peer-reviewed journal editor can re-typeset the manuscript directly into their template.
+- **Scholarly LaTeX PDF** (`pdfs-singlecol/`) — single-column scholarly typesetting via pandoc + tectonic with the LaTeX `article` class. The full LaTeX source bundle (with figures) is in [`latex-sources/`](latex-sources/).
 
 | # | Title | DOI | Standard | LaTeX | Domain |
 |---|---|---|:---:|:---:|---|
@@ -92,7 +92,7 @@ Five standalone papers articulate MILO's architecture, each grounded in establis
 | 4 | [Eight Structural Principles for Adaptive AI Architecture](articles/04-Eight-Structural-Principles.md) | [10.5281/zenodo.20117703](https://doi.org/10.5281/zenodo.20117703) | [📄](pdfs/MILO_Article_04_GoverningPrinciples.pdf) | [📑](pdfs-singlecol/MILO_Article_04_GoverningPrinciples_singlecol.pdf) | Adaptive AI theory · Cybernetics · Control theory |
 | 5 | [Adaptive Resilience: Why AI Systems Must Remain Viable in Any Future](articles/05-Adaptive-Resilience.md) | [10.5281/zenodo.20117716](https://doi.org/10.5281/zenodo.20117716) | [📄](pdfs/MILO_Article_05_AdaptiveResilience.pdf) | [📑](pdfs-singlecol/MILO_Article_05_AdaptiveResilience_singlecol.pdf) | AI resilience · Viability · Non-stationary environments |
 
-**Concept DOI** (whole architectural reference, persistent across versions): [10.5281/zenodo.20117025](https://doi.org/10.5281/zenodo.20117025)
+**Concept DOI** (whole architectural reference, all versions): [10.5281/zenodo.20117024](https://doi.org/10.5281/zenodo.20117024) · **v1.0.0 DOI:** [10.5281/zenodo.20117025](https://doi.org/10.5281/zenodo.20117025)
 
 See [`articles/README.md`](articles/README.md) for full abstracts of each paper.
 
@@ -132,13 +132,13 @@ Architectural commitments designed to be implemented as **enforceable code-level
 
 ## U.S. national-interest context
 
-The architectural commitments of MILO are framed against the deployment context identified by the **U.S. Department of Energy Genesis Mission** (Executive Order 14363, November 2025) for AI-enabled critical-infrastructure systems: advanced manufacturing, grid reliability, autonomous systems, nuclear-facility operations, and human-in-the-loop AI for high-consequence decision support. The architecture is consistent with the U.S. **NIST AI Risk Management Framework 1.0** (Appendix C on Human-AI Interaction), with **CISA Critical Manufacturing Sector** cybersecurity priorities, and with the **EU AI Act Article 14** human-oversight requirements for cross-border interoperability.
+National-interest context: see U.S. smart-manufacturing policy. The architecture is consistent with the U.S. **NIST AI Risk Management Framework 1.0** (Appendix C on Human-AI Interaction), with **CISA Critical Manufacturing Sector** cybersecurity priorities, and with the **EU AI Act Article 14** human-oversight requirements for cross-border interoperability.
 
 ---
 
 ## Author
 
-**Jorge Enrique Flores Montano** is the founder of JM Automated Solutions and the inventor of MILO. He holds an M.S. in Industrial Engineering (December 2018, with a minor in Applied Statistics and a certification in Public Utilities Regulation Economics) and a B.S. in Mechatronics Engineering (May 2016, with a minor in Industrial Automation). He is a CONACYT-SENER federal scholar and a member of Alpha Pi Mu, the U.S. industrial-engineering honor society. He has over seven years of hands-on deployment experience in industrial vision and automation systems across the food, beverage, pharmaceutical, and medical-device manufacturing domains. His work in adaptive AI architecture focuses on cryptographic entropy sourcing, industrial control authentication, supervisory primacy for human-in-the-loop AI, and the structural principles of viable adaptive AI orchestration.
+**Jorge Enrique Flores Montano** is the founder of JM Automated Solutions, LLC and the inventor of MILO. He holds an M.S. in Industrial Engineering (December 2018, with a minor in Applied Statistics and a certification in Public Utilities Regulation Economics) and a B.S. in Mechatronics Engineering (May 2016, with a minor in Industrial Automation). He is a CONACYT-SENER federal scholar and a member of Alpha Pi Mu, the U.S. industrial-engineering honor society. He has hands-on experience deploying industrial vision and automation systems in food, beverage, pharmaceutical and medical-device manufacturing. His work in adaptive AI architecture focuses on cryptographic entropy sourcing, industrial control authentication, supervisory primacy for human-in-the-loop AI, and the structural principles of viable adaptive AI orchestration.
 
 ---
 
@@ -146,7 +146,7 @@ The architectural commitments of MILO are framed against the deployment context 
 
 The architectural manuscripts in this repository are released under the **Creative Commons Attribution 4.0 International License** ([CC BY 4.0](LICENSE)) for academic and public use, with attribution to Jorge Enrique Flores Montano and reference to USPTO Serial No. 99706004.
 
-**All source-code rights for the underlying MILO implementation are reserved. Patent pending.**
+**All source-code rights for the underlying MILO implementation are reserved.** Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted. ~MILO trademark application Serial No. 99706004.
 
 ### How to cite
 
@@ -159,7 +159,7 @@ The architectural manuscripts in this repository are released under the **Creati
   publisher    = {Zenodo},
   doi          = {10.5281/zenodo.20117025},
   url          = {https://doi.org/10.5281/zenodo.20117025},
-  note         = {Patent pending; USPTO Serial No.~99706004. CC BY 4.0.}
+  note         = {v1.0.0 (version DOI); concept DOI 10.5281/zenodo.20117024. Self-published preprint series; not peer-reviewed. CC BY 4.0.}
 }
 ```
 
@@ -176,13 +176,12 @@ The mark filed at USPTO is `~MILO` with a leading tilde. The tilde is part of th
 ## Status
 
 - ✅ ~MILO™ trademark filed (USPTO Serial No. 99706004 — March 16, 2026)
-- ✅ Five architectural manuscripts complete (this repository)
-- ✅ Federal submission under DOE Genesis Mission
-- ⏳ Patent application pending
+- ✅ Five architectural manuscripts complete (self-published preprints; not peer-reviewed)
+- ✅ Two U.S. provisional patent applications filed (No. 63/993,825; No. 64/016,665); not granted
 - ⏳ arXiv preprint deposition in preparation
-- ⏳ Peer-reviewed journal submissions in preparation
+- ⏳ No peer review to date
 
 ---
 
-© 2026 Jorge Enrique Flores Montano · JM Automated Solutions  
-~MILO™ is a trademark of Jorge Enrique Flores Montano · USPTO Serial No. 99706004 · Patent Pending.
+© 2026 Jorge Enrique Flores Montano · JM Automated Solutions, LLC  
+Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted. ~MILO trademark application Serial No. 99706004.
