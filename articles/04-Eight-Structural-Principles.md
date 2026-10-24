@@ -27,8 +27,7 @@ keywords:
   - Individual-Baseline Variance Modeling
   - Precision Perturbation Without Variance Compression
   - operator cognitive state
-  - DOE Genesis Mission
-  - patent pending
+  - provisional patent applications
   - critical infrastructure
   - U.S. national interest
 tags:
@@ -42,8 +41,7 @@ tags:
   - antifragility
   - jorge-flores-montano
   - jm-automated-solutions
-  - doe-genesis-mission
-  - patent-pending
+  - provisional-patent-applications
   - critical-infrastructure
   - operator-cognitive-modeling
 article_number: 4
@@ -51,17 +49,19 @@ series_name: "MILO Architectural Series"
 series_total: 5
 canonical_url: "https://www.milo-usa.com/articles/04-eight-structural-principles"
 trademark: "~MILO™ is a trademark of Jorge Enrique Flores Montano (USPTO Serial No. 99706004)"
-patent_status: "Patent Pending"
+patent_status: "Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted"
 copyright: "© 2026 Jorge Enrique Flores Montano / JM Automated Solutions"
 ---
 
 # Eight Structural Principles for Adaptive AI Architecture
 
+> **Self-published preprint (Zenodo); not peer-reviewed.**
+
 **Subtitle:** From Physical Law and Cybernetics to Engineering Constraints on Viable Adaptive Systems
 
 **Author:** Jorge Enrique Flores Montano · Founder, JM Automated Solutions
 
-**~MILO™** — Modular Intelligent Learning Orchestrator (patent pending)
+**~MILO™** — Modular Intelligent Learning Orchestrator (Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted)
 
 **Publication date:** May 2026
 
@@ -88,7 +88,7 @@ Adaptive artificial-intelligence systems are described in vague terms — *self-
 
 **Status of claims.** Six of the eight principles in this paper apply established physical and informational laws as architectural design constraints: the Second Law of Thermodynamics, Ashby's Law of Requisite Variety [6], Shannon Information Theory [7], the Principle of Least Action, Lyapunov stability [8], and the Power-Law distribution of complex-system events [9]. The mapping of each principle to a specific orchestrator-level architectural choice is the author's contribution and is subject to further validation; the laws themselves are external references. Principles 7 and 8 — *Individual-Baseline Variance Modeling* and *Precision Perturbation Without Variance Compression* — are original frameworks proposed by the author for the operator-cognitive performance layer of high-consequence systems and are flagged in the paper as design-stage frameworks pending empirical validation in shipped deployments. The synthesis is consistent with prior work by Friston [3], Beer [4], and the thermodynamic-AI literature [5]; differences are explicit in §2 and §5. This manuscript is a preprint prior to peer review.
 
-**About MILO.** MILO (Modular Intelligent Learning Orchestrator) is a patent-pending adaptive AI orchestration architecture for high-consequence critical-infrastructure environments. The full architectural reference — eight structural principles, eight operational integrity constraints, the unifying viability principle, and the trademark/patent status — is maintained as a single canonical document at https://github.com/jmontano1/milo-architecture (concept DOI: 10.5281/zenodo.20117025). Author contact: jmontano@jmautomated.com.
+**About MILO.** MILO (Modular Intelligent Learning Orchestrator) is an adaptive AI orchestration architecture (Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted) for high-consequence critical-infrastructure environments. The full architectural reference — eight structural principles, eight operational integrity constraints, the unifying viability principle, and the trademark/patent status — is maintained as a single canonical document at https://github.com/jmontano1/milo-architecture (concept DOI: 10.5281/zenodo.20117025). Author contact: jmontano@jmautomated.com.
 
 ---
 
@@ -235,11 +235,11 @@ Jorge Enrique Flores Montano (ORCID iD: [0009-0003-1859-8418](https://orcid.org/
 
 ## Conflict of Interest and Funding Disclosure
 
-The author is the inventor of MILO (patent pending) and the founder of JM Automated Solutions. The eight structural principles articulated in this paper, including the two original frameworks proposed in Sections 3.7 and 3.8, are a contribution from a working development program in which the author retains sole authorship and inventive interest. No external funding was received for the preparation of this manuscript. The author retains all rights to MILO and to the original frameworks introduced herein.
+The author is the inventor of MILO (Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted) and the founder of JM Automated Solutions. The eight structural principles articulated in this paper, including the two original frameworks proposed in Sections 3.7 and 3.8, are a contribution from a working development program in which the author retains sole authorship and inventive interest. No external funding was received for the preparation of this manuscript. The author retains all rights to MILO and to the original frameworks introduced herein.
 
 ## Appendix A — About MILO
 
-MILO (Modular Intelligent Learning Orchestrator) is a patent-pending adaptive AI orchestration architecture organized into discrete, single-responsibility subsystems under a strict separation-of-concerns discipline. An audit-first command-and-signal substrate persists every command before dispatch and every signal before fanout, producing an append-only audit trail that survives arbitrary process termination. The architecture is designed for *viability* — operational continuity under non-stationary conditions — rather than for prediction accuracy against an expected future.
+MILO (Modular Intelligent Learning Orchestrator) is an adaptive AI orchestration architecture (Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted) organized into discrete, single-responsibility subsystems under a strict separation-of-concerns discipline. An audit-first command-and-signal substrate persists every command before dispatch and every signal before fanout, producing an append-only audit trail that survives arbitrary process termination. The architecture is designed for *viability* — operational continuity under non-stationary conditions — rather than for prediction accuracy against an expected future.
 
 ### Eight structural principles
 
@@ -273,11 +273,10 @@ Architectural commitments designed to be implemented as enforceable safeguards i
 
 The principle is falsifiable: a system whose audit trail is incomplete, whose recovery is improvised, whose adaptation drifts unboundedly, or whose operator override is policy-level rather than architectural, fails the principle.
 
-### Trademark, patent, and submission status
+### Trademark and patent status
 
 - **Mark.** *~MILO™* — U.S. Patent and Trademark Office Serial No. 99706004; filed March 16, 2026; intent-to-use; International Class 009 (downloadable AI software). The leading tilde disambiguates from senior MILO marks held by unrelated owners in different International Classes.
-- **Patent.** Patent application pending for the underlying software architecture. Implementation may require a patent license once issued; nothing in this document or its CC BY 4.0 license on the manuscript text grants any patent license.
-- **Federal submission.** Submitted to the U.S. Department of Energy under the *Genesis Mission* (Executive Order 14363, November 2025); record reflects transmission only. No acceptance, selection, funding, or grant outcome is claimed.
-- **Concept DOI.** [10.5281/zenodo.20117025](https://doi.org/10.5281/zenodo.20117025) — Zenodo, persistent across versions.
+- **Patent.** Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted. Nothing in this document or its CC BY 4.0 license on the manuscript text grants any patent license.
+- **Concept DOI.** Concept DOI [10.5281/zenodo.20117024](https://doi.org/10.5281/zenodo.20117024) (all versions); v1.0.0 DOI [10.5281/zenodo.20117025](https://doi.org/10.5281/zenodo.20117025)
 - **Public reference.** [https://github.com/jmontano1/milo-architecture](https://github.com/jmontano1/milo-architecture).
 - **Author contact.** Jorge Enrique Flores Montano · jmontano@jmautomated.com · ORCID iD: [0009-0003-1859-8418](https://orcid.org/0009-0003-1859-8418).

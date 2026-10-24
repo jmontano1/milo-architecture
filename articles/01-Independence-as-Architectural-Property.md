@@ -22,8 +22,7 @@ keywords:
   - independence verification
   - thermal entropy
   - cryptographic seeding
-  - DOE Genesis Mission
-  - patent pending
+  - provisional patent applications
   - adaptive AI architecture
   - critical infrastructure
   - U.S. national interest
@@ -34,9 +33,8 @@ tags:
   - nist-sp-800-90b
   - jorge-flores-montano
   - jm-automated-solutions
-  - doe-genesis-mission
   - adaptive-ai
-  - patent-pending
+  - provisional-patent-applications
   - critical-infrastructure
   - architectural-research
 article_number: 1
@@ -44,17 +42,19 @@ series_name: "MILO Architectural Series"
 series_total: 5
 canonical_url: "https://www.milo-usa.com/articles/01-independence-architectural-property"
 trademark: "~MILO™ is a trademark of Jorge Enrique Flores Montano (USPTO Serial No. 99706004)"
-patent_status: "Patent Pending"
+patent_status: "Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted"
 copyright: "© 2026 Jorge Enrique Flores Montano / JM Automated Solutions"
 ---
 
 # Independence as an Architectural Property: A Research Direction for Multi-Source Cryptographic Entropy
 
+> **Self-published preprint (Zenodo); not peer-reviewed.**
+
 **Subtitle:** Why Future Entropy Architectures Should Design for Verifiable Spatial Independence Rather Than Assume It
 
 **Author:** Jorge Enrique Flores Montano · Founder, JM Automated Solutions
 
-**~MILO™** — Modular Intelligent Learning Orchestrator (patent pending)
+**~MILO™** — Modular Intelligent Learning Orchestrator (Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted)
 
 **Publication date:** May 2026
 
@@ -81,7 +81,7 @@ True random number generators that seed cryptographic systems are evaluated on t
 
 **Status of claims.** This is a position paper proposing an architectural *research direction*; it does not present a specific apparatus or empirical validation. The NIST SP 800-90B [1] independence requirement, the single-source thermal TRNG architectures [2], [3], the single-camera optical-chaos source [4], the parallel-optical TRNG architectures [5], [6], and the wearable-sensor entropy extraction work [7] are established external references and are described as such. The architectural class advanced in §3 — independence-verifiable joint extraction at the multi-source observation level — is the author's original proposal, framed as a falsifiable research direction (see §3, "Falsification criteria"). Compatibility with MILO's sensor-receptor subsystem [8] is illustrative; an apparatus-level instantiation and empirical validation are forthcoming work and are not claimed here. This manuscript is a preprint prior to peer review.
 
-**About MILO.** MILO (Modular Intelligent Learning Orchestrator) is a patent-pending adaptive AI orchestration architecture for high-consequence critical-infrastructure environments. The full architectural reference — eight structural principles, eight operational integrity constraints, the unifying viability principle, and the trademark/patent status — is maintained as a single canonical document at https://github.com/jmontano1/milo-architecture (concept DOI: 10.5281/zenodo.20117025). Author contact: jmontano@jmautomated.com.
+**About MILO.** MILO (Modular Intelligent Learning Orchestrator) is an adaptive AI orchestration architecture (Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted) for high-consequence critical-infrastructure environments. The full architectural reference — eight structural principles, eight operational integrity constraints, the unifying viability principle, and the trademark/patent status — is maintained as a single canonical document at https://github.com/jmontano1/milo-architecture (concept DOI: 10.5281/zenodo.20117025). Author contact: jmontano@jmautomated.com.
 
 ---
 
@@ -190,11 +190,11 @@ Jorge Enrique Flores Montano (ORCID iD: [0009-0003-1859-8418](https://orcid.org/
 
 ## Conflict of Interest and Funding Disclosure
 
-The author is the inventor of MILO (patent pending) and the founder of JM Automated Solutions. The architectural research direction proposed in this paper is a contribution from a working development program in which the author retains sole authorship and inventive interest. No external funding was received for the preparation of this manuscript. The author retains all rights to MILO and to the architectural framing articulated herein.
+The author is the inventor of MILO (Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted) and the founder of JM Automated Solutions. The architectural research direction proposed in this paper is a contribution from a working development program in which the author retains sole authorship and inventive interest. No external funding was received for the preparation of this manuscript. The author retains all rights to MILO and to the architectural framing articulated herein.
 
 ## Appendix A — About MILO
 
-MILO (Modular Intelligent Learning Orchestrator) is a patent-pending adaptive AI orchestration architecture organized into discrete, single-responsibility subsystems under a strict separation-of-concerns discipline. An audit-first command-and-signal substrate persists every command before dispatch and every signal before fanout, producing an append-only audit trail that survives arbitrary process termination. The architecture is designed for *viability* — operational continuity under non-stationary conditions — rather than for prediction accuracy against an expected future.
+MILO (Modular Intelligent Learning Orchestrator) is an adaptive AI orchestration architecture (Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted) organized into discrete, single-responsibility subsystems under a strict separation-of-concerns discipline. An audit-first command-and-signal substrate persists every command before dispatch and every signal before fanout, producing an append-only audit trail that survives arbitrary process termination. The architecture is designed for *viability* — operational continuity under non-stationary conditions — rather than for prediction accuracy against an expected future.
 
 ### Eight structural principles
 
@@ -228,11 +228,10 @@ Architectural commitments designed to be implemented as enforceable safeguards i
 
 The principle is falsifiable: a system whose audit trail is incomplete, whose recovery is improvised, whose adaptation drifts unboundedly, or whose operator override is policy-level rather than architectural, fails the principle.
 
-### Trademark, patent, and submission status
+### Trademark and patent status
 
 - **Mark.** *~MILO™* — U.S. Patent and Trademark Office Serial No. 99706004; filed March 16, 2026; intent-to-use; International Class 009 (downloadable AI software). The leading tilde disambiguates from senior MILO marks held by unrelated owners in different International Classes.
-- **Patent.** Patent application pending for the underlying software architecture. Implementation may require a patent license once issued; nothing in this document or its CC BY 4.0 license on the manuscript text grants any patent license.
-- **Federal submission.** Submitted to the U.S. Department of Energy under the *Genesis Mission* (Executive Order 14363, November 2025); record reflects transmission only. No acceptance, selection, funding, or grant outcome is claimed.
-- **Concept DOI.** [10.5281/zenodo.20117025](https://doi.org/10.5281/zenodo.20117025) — Zenodo, persistent across versions.
+- **Patent.** Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted. Nothing in this document or its CC BY 4.0 license on the manuscript text grants any patent license.
+- **Concept DOI.** Concept DOI [10.5281/zenodo.20117024](https://doi.org/10.5281/zenodo.20117024) (all versions); v1.0.0 DOI [10.5281/zenodo.20117025](https://doi.org/10.5281/zenodo.20117025)
 - **Public reference.** [https://github.com/jmontano1/milo-architecture](https://github.com/jmontano1/milo-architecture).
 - **Author contact.** Jorge Enrique Flores Montano · jmontano@jmautomated.com · ORCID iD: [0009-0003-1859-8418](https://orcid.org/0009-0003-1859-8418).
