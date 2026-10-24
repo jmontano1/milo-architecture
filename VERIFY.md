@@ -11,7 +11,8 @@ reference for MILO. Use the links below to verify claims **without** relying on 
 | Claim | URL |
 |---|---|
 | **This repository** | https://github.com/jmontano1/milo-architecture |
-| Concept DOI (whole reference) | https://doi.org/10.5281/zenodo.20117025 |
+| Concept DOI (whole reference, all versions) | https://doi.org/10.5281/zenodo.20117024 |
+| v1.0.0 DOI | https://doi.org/10.5281/zenodo.20117025 |
 | Article 1 DOI | https://doi.org/10.5281/zenodo.20117647 |
 | Article 2 DOI | https://doi.org/10.5281/zenodo.20117651 |
 | Article 3 DOI | https://doi.org/10.5281/zenodo.20117662 |
@@ -19,7 +20,6 @@ reference for MILO. Use the links below to verify claims **without** relying on 
 | Article 5 DOI | https://doi.org/10.5281/zenodo.20117716 |
 | ORCID | https://orcid.org/0009-0003-1859-8418 |
 | USPTO trademark ~MILO™ Serial **99706004** | https://tsdr.uspto.gov/#caseNumber=99706004&caseType=SERIAL_NO&searchType=statusSearch |
-| EO 14363 / Genesis Mission (Federal Register) | https://www.federalregister.gov/documents/2025/11/28/2025-21665/launching-the-genesis-mission |
 
 ## In-repo claim hygiene
 
@@ -28,12 +28,6 @@ reference for MILO. Use the links below to verify claims **without** relying on 
 | Asserted vs not claimed | [CLAIMS.md](CLAIMS.md) |
 | Standards tags → intent | [STANDARDS_CROSSWALK.md](STANDARDS_CROSSWALK.md) |
 | Mechanism → paper → demo | [MECHANISM_MAP.md](MECHANISM_MAP.md) |
-
-## DOE Genesis Mission
-
-Identifiers **MILO-ES-2026-002** and **MILO-ES-2026-003-DOE** refer to materials **transmitted**
-to DOE Genesis Mission channels. This repository claims **transmission only** — not endorsement,
-selection, partnership, contract, funding, or award.
 
 ## IEEE
 
@@ -51,7 +45,7 @@ python3 examples/supervisory_primacy_override.py
 ## What this repo is not
 
 - Not a commercial product surface  
-- Not a substitute for confidential counsel exhibits  
-- Not a claim of peer-reviewed journal acceptance or DOE award  
+- Not a claim of peer review: the papers are self-published preprints (Zenodo); not peer-reviewed  
+- Not a claim of customer deployments: MILO is pre-commercial; no customer deployments exist  
 
 *Hygiene pass: 2026-07-15 · URLs above are the durable public verifiers for this repository.*

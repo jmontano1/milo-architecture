@@ -78,5 +78,5 @@ The unifying principle is developed in full in [Article 5 — Adaptive Resilienc
 
 ---
 
-© 2026 Jorge Enrique Flores Montano · JM Automated Solutions  
-~MILO™ is a trademark of Jorge Enrique Flores Montano · USPTO Serial No. 99706004 · Patent Pending.
+© 2026 Jorge Enrique Flores Montano · JM Automated Solutions, LLC  
+~MILO™ is a trademark of Jorge Enrique Flores Montano · Two U.S. provisional patent applications filed (No. 63/993,825, Mar 1, 2026; No. 64/016,665, Mar 25, 2026); not granted. ~MILO trademark application Serial No. 99706004.
